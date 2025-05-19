@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymelaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${title}">Document</title>
+</head>
+<body>
+   <h1 th:text="${title}"></h1>
+   <ul>
+    <li th:text="${user.name}"></li>
+    <li th:text="${user.lastname}"></li>
+    <li th:if="${user.email}" th:text="${user.email}"></li>
+    <li th:if="${user.email == null}" th:text="${'no email'}"></li>
+   </ul> 
+   <a th:href="@{/list}">ver listado</a>
+   <a th:href="@{/api/params/foo(message='hola que tal festival')}">ver mensaje</a>
+   <a th:href="@{/api/params/foo?messsage=Hola que tal festival}">ver mensaje 2</a>
+   <a th:href="@{/api/params/bar(text='textoprueba',  code=111)}">ver bar params</a>
+   <a th:href="@{'/api/var/baz/' + ${title}}">Ver var baz variable</a>
+   <a th:href="@{'/api/var/baz/' + 'Hola que tal festival'}">Ver var baz variable</a>
+</body>
+</html>
