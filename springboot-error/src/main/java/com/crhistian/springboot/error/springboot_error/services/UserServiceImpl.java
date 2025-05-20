@@ -14,10 +14,6 @@ public class UserServiceImpl implements UserService{
     @Autowired
     private List<User> users;
 
-    
-    
-
-
     @Override
     public List<User> findyAll() {
         return users;
@@ -25,15 +21,15 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public Optional<User> findById(Long id) {
-        User user = null;
-        for (User u: users) {
+        return users.stream().filter( usr -> usr.getId().equals(id) ).findFirst();
+        /*for (User u: users) {
             if (u.getId().equals(id)) {
                user = u;
                break;
             } 
-        }
+        }*/
 
-        return Optional.ofNullable(user); 
+        //return Optional.ofNullable(user); 
     }
 
 
