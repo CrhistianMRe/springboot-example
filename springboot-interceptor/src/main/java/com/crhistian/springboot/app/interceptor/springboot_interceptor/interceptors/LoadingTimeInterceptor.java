@@ -1,5 +1,7 @@
 package com.crhistian.springboot.app.interceptor.springboot_interceptor.interceptors;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
@@ -10,6 +12,9 @@ import jakarta.servlet.http.HttpServletResponse;
 
 @Component
 public class LoadingTimeInterceptor implements HandlerInterceptor{
+
+
+    private static final Logger logger = LoggerFactory.getLogger(LoadingTimeInterceptor.class);
 
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler,
