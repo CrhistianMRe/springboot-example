@@ -19,11 +19,14 @@ public class LoadingTimeInterceptor implements HandlerInterceptor{
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler,
             @Nullable ModelAndView modelAndView) throws Exception {
+        logger.info("LoadingTimeInterceptor: postHandle() Exiting.....");
     }
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
             throws Exception {
+        logger.info("LoadingTimeInterceptor: preHandle() Entering.....");
+    }
 
         return true;
     }
