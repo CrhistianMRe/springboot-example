@@ -10,7 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@Component
+@Component("timeInterceptor")
 public class LoadingTimeInterceptor implements HandlerInterceptor{
 
 
