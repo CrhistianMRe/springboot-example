@@ -8,7 +8,11 @@ public class GreetingServiceImpl implements GreetingService{
     @Override
     public String sayHello(String person, String phrase) {
 
-        return null;
+        String greeting = phrase + " " + person;
+
+        System.out.println(greeting);
+
+        return greeting;
     }
 
     
