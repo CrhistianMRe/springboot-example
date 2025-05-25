@@ -34,6 +34,15 @@ public class GreetingAspect {
 
     }
 
+    @After("execution(String com.crhistianm.springboot.app.aop.springboot_aop.services.GreetingService.*(..))")
+    public void loggerAfter(JoinPoint joinPoint){
+
+        String method = joinPoint.getSignature().getName();
+
+        String args = Arrays.toString(joinPoint.getArgs());
+        logger.info(" Despues: " + method + " con los argumentos " + args);
+
+    }
     
     @AfterReturning("execution(String com.crhistianm.springboot.app.aop.springboot_aop.services.GreetingService.*(..))")
     public void loggerAfterReturning(JoinPoint joinPoint){
