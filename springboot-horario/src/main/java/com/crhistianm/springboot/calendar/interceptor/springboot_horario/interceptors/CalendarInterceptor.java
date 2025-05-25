@@ -2,6 +2,7 @@ package com.crhistianm.springboot.calendar.interceptor.springboot_horario.interc
 
 import java.util.Calendar;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
@@ -13,6 +14,11 @@ import jakarta.servlet.http.HttpServletResponse;
 public class CalendarInterceptor implements HandlerInterceptor{
 
 
+    @Value("${config.calendar.open}")
+    private Integer open;
+
+    @Value("${config.calendar.close}")
+    private Integer close;
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
@@ -22,8 +28,23 @@ public class CalendarInterceptor implements HandlerInterceptor{
 
         int hour = calendar.get(Calendar.HOUR_OF_DAY);
 
+        if(hour >= open && hour < close){
+            StringBuilder message = new StringBuilder("Bienvenidos al horario de atencion a clientes!");
 
-        return true;
+            message.append(", atendemos desde las ");
+            message.append(open);
+            message.append("hrs. ");
+            message.append("hasta las ");
+            message.append(close);
+            message.append("hrs.");
+            message.append(" Gracias por su visita.");
+
+            request.setAttribute("message", message.toString());
+
+            return true;
+        }
+    
+        return false;
     }
 
     @Override
