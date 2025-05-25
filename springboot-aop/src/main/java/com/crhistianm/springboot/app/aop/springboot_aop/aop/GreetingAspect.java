@@ -3,6 +3,7 @@ package com.crhistianm.springboot.app.aop.springboot_aop.aop;
 import java.util.Arrays;
 
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.slf4j.Logger;
@@ -19,7 +20,8 @@ public class GreetingAspect {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @Before("execution(String com.crhistianm.springboot.app.aop.springboot_aop.services.GreetingService.sayHello(..))")
+    @Before("execution(String com.crhistianm.springboot.app.aop.springboot_aop.services.GreetingService.*(..))")
+    //@Before("execution(String com.crhistianm.springboot.app.aop.springboot_aop.services.GreetingService.sayHello(..))")
     //@Before("execution(* com.crhistianm.springboot.app.aop.springboot_aop.services.GreetingService.sayHello(..))")
     public void loggerBefore(JoinPoint joinPoint){
 
@@ -31,6 +33,14 @@ public class GreetingAspect {
     }
 
     
+    @After("execution(String com.crhistianm.springboot.app.aop.springboot_aop.services.GreetingService.*(..))")
+    public void loggerAfter(JoinPoint joinPoint){
 
+        String method = joinPoint.getSignature().getName();
+
+        String args = Arrays.toString(joinPoint.getArgs());
+        logger.info(" Despues: " + method + " con los argumentos " + args);
+
+    }
     
 }
