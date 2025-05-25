@@ -1,6 +1,7 @@
 package com.crhistianm.springboot.calendar.interceptor.springboot_horario.controllers;
 
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.http.ResponseEntity;
@@ -13,7 +14,11 @@ public class AppController {
     @GetMapping("/foo")
     public ResponseEntity<?> foo(){
 
-       Map<String, Object> data = Collections.singletonMap("Title", "Bienvenidos al sistema de atencion!");
+       Map<String, Object> data = new HashMap<>();
+
+       data.put("Title", "Bienvenidos al sistema de atencion!");
+       data.put("time", new Date());
+
        return ResponseEntity.ok(data);
     }
 
