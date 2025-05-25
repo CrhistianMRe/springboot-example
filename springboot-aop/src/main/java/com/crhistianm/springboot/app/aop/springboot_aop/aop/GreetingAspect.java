@@ -45,6 +45,14 @@ public class GreetingAspect {
 
     }
 
-    
+    @AfterThrowing("execution(String com.crhistianm.springboot.app.aop.springboot_aop.services.GreetingService.*(..))")
+    public void loggerAfterThrowing(JoinPoint joinPoint){
+
+        String method = joinPoint.getSignature().getName();
+
+        String args = Arrays.toString(joinPoint.getArgs());
+        logger.info(" Despues de lanzar de excepcion: " + method + " con los argumentos " + args);
+
+    }
     
 }
