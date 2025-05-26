@@ -70,10 +70,9 @@ public class GreetingAspect {
     public Object loggerAround(ProceedingJoinPoint joinPoint) throws Throwable{
 
         String method = joinPoint.getSignature().getName();
-
         String args = Arrays.toString(joinPoint.getArgs());
-
         Object result = null;
+
         try{
 
             logger.info("El metodo " + method + "() con los parametros " + args);
