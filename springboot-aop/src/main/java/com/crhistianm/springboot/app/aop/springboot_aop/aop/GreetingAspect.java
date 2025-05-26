@@ -28,8 +28,8 @@ public class GreetingAspect {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     
-    @Before("greetingLoggerPointCut()")
-    //@Before("greetingLoggerPointCut()")
+    @Before("GreetingServicePointcuts.greetingLoggerPointCut()")
+    //@Before("GreetingServicePointcuts.greetingLoggerPointCut()")
     //@Before("execution(* com.crhistianm.springboot.app.aop.springboot_aop.services.GreetingService.sayHello(..))")
     public void loggerBefore(JoinPoint joinPoint){
 
@@ -40,7 +40,7 @@ public class GreetingAspect {
 
     }
 
-    @After("greetingLoggerPointCut()")
+    @After("GreetingServicePointcuts.greetingLoggerPointCut()")
     public void loggerAfter(JoinPoint joinPoint){
 
         String method = joinPoint.getSignature().getName();
@@ -50,7 +50,7 @@ public class GreetingAspect {
 
     }
     
-    @AfterReturning("greetingLoggerPointCut()")
+    @AfterReturning("GreetingServicePointcuts.greetingLoggerPointCut()")
     public void loggerAfterReturning(JoinPoint joinPoint){
 
         String method = joinPoint.getSignature().getName();
@@ -60,7 +60,7 @@ public class GreetingAspect {
 
     }
 
-    @AfterThrowing("greetingLoggerPointCut()")
+    @AfterThrowing("GreetingServicePointcuts.greetingLoggerPointCut()")
     public void loggerAfterThrowing(JoinPoint joinPoint){
 
         String method = joinPoint.getSignature().getName();
@@ -70,7 +70,7 @@ public class GreetingAspect {
 
     }
 
-    @Around("greetingLoggerPointCut()")
+    @Around("GreetingServicePointcuts.greetingLoggerPointCut()")
     public Object loggerAround(ProceedingJoinPoint joinPoint) throws Throwable{
 
         String method = joinPoint.getSignature().getName();
