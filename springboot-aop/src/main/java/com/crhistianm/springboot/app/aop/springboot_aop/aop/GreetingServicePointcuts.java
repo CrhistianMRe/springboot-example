@@ -14,4 +14,7 @@ public class GreetingServicePointcuts {
 
     @Pointcut("execution(String com.crhistianm.springboot.app.aop.springboot_aop.services.GreetingService.*(..))")
     private void greetingLoggerFooAspectPointCut(){}   
+
+    @Pointcut("execution(String com.crhistianm.springboot.app.aop.springboot_aop.services.GreetingService.*(..))")
+    private void greetingLoggerPointCut(){}
 }

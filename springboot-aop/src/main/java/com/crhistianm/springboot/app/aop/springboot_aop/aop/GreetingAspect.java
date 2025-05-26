@@ -27,10 +27,8 @@ public class GreetingAspect {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @Pointcut("execution(String com.crhistianm.springboot.app.aop.springboot_aop.services.GreetingService.*(..))")
-    private void greetingLoggerPointCut(){}
-
-    @Before("greetingLoggerPointCut")
+    
+    @Before("greetingLoggerPointCut()")
     //@Before("greetingLoggerPointCut()")
     //@Before("execution(* com.crhistianm.springboot.app.aop.springboot_aop.services.GreetingService.sayHello(..))")
     public void loggerBefore(JoinPoint joinPoint){
