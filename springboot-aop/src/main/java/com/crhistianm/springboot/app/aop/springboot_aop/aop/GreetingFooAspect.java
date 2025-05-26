@@ -23,7 +23,7 @@ public class GreetingFooAspect {
 
     
     
-    @Before("greetingLoggerFooAspectPointCut()")
+    @Before("GreetingServicePointcuts.greetingLoggerFooAspectPointCut()")
     public void loggerBefore(JoinPoint joinPoint){
 
 
