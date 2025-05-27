@@ -1,6 +1,10 @@
 package com.crhistianm.springboot.jpa.springboot_jpa.entities;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 /**
@@ -10,9 +14,14 @@ import jakarta.persistence.Table;
 @Table(name="persons")
 public class Person {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    
     private String name;
     private String lastname;
+
+    @Column(name = "programming_language")
     private String programmingLanguage;
 
     public Person (Long id, String name, String lastname, String programmingLanguage){
