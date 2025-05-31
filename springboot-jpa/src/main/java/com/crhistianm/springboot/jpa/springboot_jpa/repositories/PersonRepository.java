@@ -1,6 +1,7 @@
 package com.crhistianm.springboot.jpa.springboot_jpa.repositories;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
@@ -11,6 +12,10 @@ import com.crhistianm.springboot.jpa.springboot_jpa.entities.Person;
  * PersonRepository
  */
 public interface PersonRepository extends CrudRepository<Person, Long>{
+
+
+    @Query("select p from Person p where p.id=?1")
+    Optional<Person> findOne(Long id);
 
     List<Person> findByProgrammingLanguage(String programmingLanguage);
 
