@@ -46,6 +46,11 @@ public class SpringbootJpaApplication implements CommandLineRunner{
     }
 
     public void create(){
+        Person person = new Person(null, "Lalo", "Thor", "Python");
+
+        Person personNew = repository.save(person);
+
+        System.out.println(personNew);
 
     }
 
