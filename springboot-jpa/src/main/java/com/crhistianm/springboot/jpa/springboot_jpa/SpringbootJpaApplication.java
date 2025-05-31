@@ -1,6 +1,7 @@
 package com.crhistianm.springboot.jpa.springboot_jpa;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -28,8 +29,11 @@ public class SpringbootJpaApplication implements CommandLineRunner{
 
 
     public void findOne(){
-        Person person = repository.findById(1L).orElseThrow();
-
+        Person person = null;
+        Optional<Person> optionalPerson = repository.findById(8L);
+        if(optionalPerson.isPresent()){
+            person = optionalPerson.get();
+        }
         System.out.println(person);
     }
 
