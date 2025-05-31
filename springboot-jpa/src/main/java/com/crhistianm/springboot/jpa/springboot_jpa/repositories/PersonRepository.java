@@ -20,6 +20,9 @@ public interface PersonRepository extends CrudRepository<Person, Long>{
     @Query("select p from Person p where p.name=?1")
     Optional<Person> findOneName(String name);
 
+    @Query("select p from Person p where p.name like %?1%")
+    Optional<Person> findOneLikeName(String name);
+
     List<Person> findByProgrammingLanguage(String programmingLanguage);
 
     @Query("select p from Person p where p.programmingLanguage=?1 and p.name=?2")
