@@ -2,6 +2,7 @@ package com.crhistianm.springboot.jpa.springboot_jpa;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Scanner;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -46,12 +47,22 @@ public class SpringbootJpaApplication implements CommandLineRunner{
     }
 
     public void create(){
-        Person person = new Person(null, "Lalo", "Thor", "Python");
+
+        Scanner scanner = new Scanner(System.in);
+        String name = scanner.next();
+        String lastname = scanner.next();
+        String programmingLanguage = scanner.next();
+
+        scanner.close();
+
+        Person person = new Person(null, name, lastname, programmingLanguage);
 
         Person personNew = repository.save(person);
 
         System.out.println(personNew);
 
+        repository.findById(personNew.getId()).ifPresent(System.out::println);
+            
     }
 
     public void list(){
