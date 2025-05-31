@@ -24,7 +24,9 @@ public class SpringbootJpaApplication implements CommandLineRunner{
     @Override
     public void run(String... args) throws Exception {
 
-        findOne();
+        //list();
+        //findOne();
+        create();
     }
 
 
@@ -40,6 +42,10 @@ public class SpringbootJpaApplication implements CommandLineRunner{
         //repository.findOneName("Pepe").ifPresent(System.out::println);
         //repository.findOneLikeName("pe").ifPresent(System.out::println);
         repository.findByNameContaining("pe").ifPresent(System.out::println);
+
+    }
+
+    public void create(){
 
     }
 
