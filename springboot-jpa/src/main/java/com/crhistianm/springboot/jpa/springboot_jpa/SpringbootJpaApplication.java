@@ -23,9 +23,15 @@ public class SpringbootJpaApplication implements CommandLineRunner{
     @Override
     public void run(String... args) throws Exception {
 
-
+        findOne();
     }
 
+
+    public void findOne(){
+        Person person = repository.findById(1L).orElseThrow();
+
+        System.out.println(person);
+    }
 
     public void list(){
         //List<Person> persons = (List<Person>)repository.findAll();
