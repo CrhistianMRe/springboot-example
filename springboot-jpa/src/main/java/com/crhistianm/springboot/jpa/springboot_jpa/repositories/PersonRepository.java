@@ -13,6 +13,9 @@ import com.crhistianm.springboot.jpa.springboot_jpa.entities.Person;
  */
 public interface PersonRepository extends CrudRepository<Person, Long>{
 
+    @Query("select concat(p.name, ' ', p.lastname) as fullname from Person p where p.id=?1")
+    String getFullNameById(Long id);
+
     @Query("select p.name from Person p where p.id=?1")
     String getNameById(Long id);
 
