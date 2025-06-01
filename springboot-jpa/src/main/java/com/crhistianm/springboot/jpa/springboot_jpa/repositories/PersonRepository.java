@@ -43,7 +43,7 @@ public interface PersonRepository extends CrudRepository<Person, Long>{
 
 
     @Query("select p.id, p.name, p.lastname, p.programmingLanguage from Person p where p.id =?1")
-    Object obtenerPersonDataFullById(Long id);
+    Object[] ObtenerPersonDataFullById(Long id);
 
     @Query("select p.id, p.name, p.lastname, p.programmingLanguage from Person p")
     List<Object[]> obtenerPersonDataFull();
