@@ -31,7 +31,8 @@ public class SpringbootJpaApplication implements CommandLineRunner{
         //findOne();
         //create();
         //update();
-        delete();
+        //delete();
+        delete2();
     }
 
 
@@ -49,6 +50,27 @@ public class SpringbootJpaApplication implements CommandLineRunner{
         //repository.findOneLikeName("pe").ifPresent(System.out::println);
         repository.findByNameContaining("pe").ifPresent(System.out::println);
 
+    }
+
+
+    @Transactional
+    public void delete2(){
+
+        repository.findAll().forEach(System.out::println);
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Ingrese el id a eliminar");
+
+        Long id = scanner.nextLong();
+        Optional<Person> optionalPerson = repository.findById(id);
+
+        optionalPerson.ifPresentOrElse(person -> {
+            repository.delete(person);
+            System.out.println("Eliminado exitosamente");
+        }, () -> System.out.println("No existe el id"));
+
+        repository.findAll().forEach(System.out::println);
+
+        scanner.close();
     }
 
     @Transactional
