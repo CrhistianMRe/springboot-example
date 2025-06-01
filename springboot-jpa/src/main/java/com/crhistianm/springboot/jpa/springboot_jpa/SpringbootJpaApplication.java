@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Scanner;
 
+import org.aspectj.weaver.patterns.PerObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -28,7 +29,8 @@ public class SpringbootJpaApplication implements CommandLineRunner{
 
         //list();
         //findOne();
-        create();
+        //create();
+        update();
     }
 
 
@@ -50,6 +52,24 @@ public class SpringbootJpaApplication implements CommandLineRunner{
 
     @Transactional
     public void update(){
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Ingrese el id de la persona a editar");
+
+        Long id = scanner.nextLong();
+
+        Optional<Person> optionalPerson = repository.findById(id);
+
+        optionalPerson.ifPresent(p -> {
+            System.out.println(p);
+            System.out.println("Ingrese el lenguaje de progra para modificar");
+            String programmingLanguage = scanner.next();
+            p.setProgrammingLanguage(programmingLanguage);
+            Person personDb = repository.save(p);
+            System.out.println(personDb);
+        }); 
+
+        scanner.close();
 
     }
 
