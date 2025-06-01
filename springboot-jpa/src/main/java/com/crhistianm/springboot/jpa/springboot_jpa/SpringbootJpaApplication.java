@@ -30,7 +30,8 @@ public class SpringbootJpaApplication implements CommandLineRunner{
         //list();
         //findOne();
         //create();
-        update();
+        //update();
+        delete();
     }
 
 
@@ -50,6 +51,17 @@ public class SpringbootJpaApplication implements CommandLineRunner{
 
     }
 
+    @Transactional
+    public void delete(){
+
+        repository.findAll().forEach(System.out::println);
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Ingrese el id a eliminar");
+
+        Long id = scanner.nextLong();
+        repository.deleteById(id);
+        repository.findAll().forEach(System.out::println);
+    }
     @Transactional
     public void update(){
         Scanner scanner = new Scanner(System.in);
