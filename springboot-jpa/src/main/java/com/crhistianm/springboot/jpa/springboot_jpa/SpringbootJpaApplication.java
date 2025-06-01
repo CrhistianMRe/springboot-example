@@ -56,6 +56,12 @@ public class SpringbootJpaApplication implements CommandLineRunner{
         String fullname = repository.getFullNameById(id);
         System.out.println(fullname);
 
+        System.out.println("================== consulta por campos personalizados por el id =============");
+
+        Object[] personReg = repository.obtenerPersonDataFullById(id);
+
+        System.out.println("id=" + personReg[0] + ", nombre =" + personReg[1] + ", apellido=" + personReg[2] + ", lenguaje=" + personReg[3]);
+
 
     }
 
