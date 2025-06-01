@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.crhistianm.springboot.jpa.springboot_jpa.entities.Person;
 import com.crhistianm.springboot.jpa.springboot_jpa.repositories.PersonRepository;
@@ -31,6 +32,7 @@ public class SpringbootJpaApplication implements CommandLineRunner{
     }
 
 
+    @Transactional(readOnly = true)
     public void findOne(){
         //Person person = null;
         //Optional<Person> optionalPerson = repository.findById(8L);
@@ -46,6 +48,9 @@ public class SpringbootJpaApplication implements CommandLineRunner{
 
     }
 
+
+
+    @Transactional
     public void create(){
 
         Scanner scanner = new Scanner(System.in);
@@ -65,6 +70,7 @@ public class SpringbootJpaApplication implements CommandLineRunner{
             
     }
 
+    @Transactional(readOnly = true)
     public void list(){
         //List<Person> persons = (List<Person>)repository.findAll();
         //List<Person> persons = (List<Person>)repository.buscarByProgrammingLanguage("Java", "Maria");
