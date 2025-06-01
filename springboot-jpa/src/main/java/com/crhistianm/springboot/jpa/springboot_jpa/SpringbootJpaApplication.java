@@ -48,6 +48,10 @@ public class SpringbootJpaApplication implements CommandLineRunner{
 
     }
 
+    @Transactional
+    public void update(){
+
+    }
 
 
     @Transactional
