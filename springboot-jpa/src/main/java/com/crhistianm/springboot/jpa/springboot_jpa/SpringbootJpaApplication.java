@@ -54,8 +54,13 @@ public class SpringbootJpaApplication implements CommandLineRunner{
     public void create(){
 
         Scanner scanner = new Scanner(System.in);
+        System.out.println("Ingrese el nombre ");
         String name = scanner.next();
+
+        System.out.println("Ingrese lastname");
         String lastname = scanner.next();
+
+        System.out.println("Ingrese programmingLanguage");
         String programmingLanguage = scanner.next();
 
         scanner.close();
