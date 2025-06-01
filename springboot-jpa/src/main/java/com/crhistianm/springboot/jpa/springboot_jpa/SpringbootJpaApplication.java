@@ -52,6 +52,11 @@ public class SpringbootJpaApplication implements CommandLineRunner{
         Long idDb = repository.getIdById(id);
         System.out.println(idDb);
 
+
+        String fullname = repository.getFullNameById(id);
+        System.out.println(fullname);
+
+
     }
 
 
