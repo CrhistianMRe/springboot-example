@@ -13,6 +13,10 @@ import com.crhistianm.springboot.jpa.springboot_jpa.entities.Person;
  */
 public interface PersonRepository extends CrudRepository<Person, Long>{
 
+   
+    @Query("select new Person(p.name, p.lastname) from Person p")
+    List<Person> findAllObjectPersonPersonalized();
+
     @Query("select concat(p.name, ' ', p.lastname) as fullname from Person p where p.id=?1")
     String getFullNameById(Long id);
 
