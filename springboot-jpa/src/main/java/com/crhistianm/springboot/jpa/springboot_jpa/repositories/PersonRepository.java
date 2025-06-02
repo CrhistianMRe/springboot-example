@@ -14,6 +14,8 @@ import com.crhistianm.springboot.jpa.springboot_jpa.entities.Person;
  */
 public interface PersonRepository extends CrudRepository<Person, Long>{
 
+    @Query("select upper(p.name || ' ' || p.lastname) from Person p")
+    List<String> findAllFullNameConcatUpper();
 
     //@Query("select concat(p.name, ' ', p.lastname) from Person p")
     @Query("select p.name || ' ' || p.lastname from Person p")
