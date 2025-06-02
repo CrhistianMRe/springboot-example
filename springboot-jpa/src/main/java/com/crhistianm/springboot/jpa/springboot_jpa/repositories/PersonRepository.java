@@ -14,6 +14,10 @@ import com.crhistianm.springboot.jpa.springboot_jpa.entities.Person;
  */
 public interface PersonRepository extends CrudRepository<Person, Long>{
 
+
+    @Query("select count(distinct(p.programmingLanguage)) from Person p")
+    Long findAllProgrammingLanguageDistinctCount();
+
     @Query("select distinct(p.programmingLanguage) from Person p")
     List<String> findAllProgrammingLanguageDistinct();
     
