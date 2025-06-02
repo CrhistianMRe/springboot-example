@@ -50,6 +50,11 @@ public class SpringbootJpaApplication implements CommandLineRunner{
         System.out.println("============= consultas con nombres unicos de personas============= ");
         names = repository.findAllNamesDistinct();
         names.forEach(System.out::println);
+
+        System.out.println("============= consultas con lenguajes de programacion unicos de personas============= ");
+        List<String> languages= repository.findAllProgrammingLanguageDistinct();
+
+        languages.forEach(System.out::println);
     }
 
     @Transactional(readOnly = true)
