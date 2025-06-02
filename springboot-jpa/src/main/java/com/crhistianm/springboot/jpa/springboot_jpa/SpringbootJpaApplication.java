@@ -48,6 +48,9 @@ public class SpringbootJpaApplication implements CommandLineRunner{
         List<Person> persons = repository.findAllBetweenId();
         persons.forEach(System.out::println);
 
+        System.out.println("============= consultas por nombres ============= ");
+        persons = repository.findAllBetweenName();
+        persons.forEach(System.out::println);
 
     }
 
