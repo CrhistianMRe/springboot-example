@@ -16,6 +16,8 @@ public interface PersonRepository extends CrudRepository<Person, Long>{
 
     List<Person> findByIdBetween(Long id1, Long id2);
 
+    List<Person> findByNameBetween(String name1, String name2);
+
 
 
     //Esta es between pero en el refiriendose al abecedario
