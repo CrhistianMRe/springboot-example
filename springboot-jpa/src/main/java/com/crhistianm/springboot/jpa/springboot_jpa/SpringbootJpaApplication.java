@@ -36,7 +36,12 @@ public class SpringbootJpaApplication implements CommandLineRunner{
         //delete2();
         //personalizedQueries();
         //personalizedQueries2();
-        personalizedQueriesDistinct();
+        //personalizedQueriesDistinct();
+        personalizedQueriesConcatUpperAndLowerCase();
+    }
+
+    @Transactional(readOnly = true)
+    public void personalizedQueriesConcatUpperAndLowerCase(){
 
     }
 
