@@ -13,6 +13,9 @@ import com.crhistianm.springboot.jpa.springboot_jpa.entities.Person;
  * PersonRepository
  */
 public interface PersonRepository extends CrudRepository<Person, Long>{
+
+    @Query("select distinct(p.programmingLanguage) from Person p")
+    List<String> findAllProgrammingLanguageDistinct();
     
     
     @Query("select distinct(p.name) from Person p")
