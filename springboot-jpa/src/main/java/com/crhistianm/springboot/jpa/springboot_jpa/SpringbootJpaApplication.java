@@ -55,6 +55,12 @@ public class SpringbootJpaApplication implements CommandLineRunner{
         List<String> languages= repository.findAllProgrammingLanguageDistinct();
 
         languages.forEach(System.out::println);
+
+
+        System.out.println("============= consultas con cuenta de lenguajes de programacion unicos de personas============= ");
+        Long totalLanguage = repository.findAllProgrammingLanguageDistinctCount();
+        System.out.println("Cantidad de lenguajes: " + totalLanguage);
+
     }
 
     @Transactional(readOnly = true)
