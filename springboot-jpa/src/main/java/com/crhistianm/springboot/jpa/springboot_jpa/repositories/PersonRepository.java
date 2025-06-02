@@ -14,6 +14,9 @@ import com.crhistianm.springboot.jpa.springboot_jpa.entities.Person;
  */
 public interface PersonRepository extends CrudRepository<Person, Long>{
 
+    @Query("select p.id, upper(p.name), lower(p.lastname), upper(p.programmingLanguage) from Person p")
+    List<Object[]> findPersonDataListCase();
+
     @Query("select upper(p.name || ' ' || p.lastname) from Person p")
     List<String> findAllFullNameConcatUpper();
 
