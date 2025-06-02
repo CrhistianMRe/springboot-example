@@ -14,6 +14,10 @@ import com.crhistianm.springboot.jpa.springboot_jpa.entities.Person;
  */
 public interface PersonRepository extends CrudRepository<Person, Long>{
     
+    
+    @Query("select distinct(p.name) from Person p")
+    List<String> findAllNamesDistinct();
+
     @Query("select p.name from Person p")
     List<String> findAllNames();
    
