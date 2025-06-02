@@ -49,7 +49,7 @@ public class SpringbootJpaApplication implements CommandLineRunner{
         persons.forEach(System.out::println);
 
         System.out.println("============= consultas por nombres ============= ");
-        persons = repository.findAllBetweenName("J", "Q");
+        persons = repository.findByNameBetween("J", "Q");
         persons.forEach(System.out::println);
 
     }
