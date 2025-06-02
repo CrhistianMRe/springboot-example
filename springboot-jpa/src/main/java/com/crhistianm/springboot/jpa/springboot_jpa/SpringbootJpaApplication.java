@@ -47,6 +47,12 @@ public class SpringbootJpaApplication implements CommandLineRunner{
         names.forEach(System.out::println);
 
 
+        System.out.println("============= consultas nombres y apellidos mayuscula de personas============= ");
+        names = repository.findAllFullNameConcatUpper();
+        names.forEach(System.out::println);
+
+        
+
     }
 
 
