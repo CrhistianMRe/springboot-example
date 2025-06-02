@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Scanner;
 
-import org.aspectj.weaver.patterns.PerObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -57,8 +56,14 @@ public class SpringbootJpaApplication implements CommandLineRunner{
         System.out.println(fullname);
 
         System.out.println("================== consulta por campos personalizados por el id =============");
-        Object[] personReg = (Object[])repository.obtenerPersonDataFullById(id);
-        System.out.println("id=" + personReg[0] + ", nombre =" + personReg[1] + ", apellido=" + personReg[2] + ", lenguaje=" + personReg[3]);
+
+        Optional<Object> optionalPersonReg = repository.obtenerPersonDataFullById(id);
+        if (optionalPersonReg.isPresent()){
+            Object[] personReg = (Object[])optionalPersonReg.orElseThrow();
+            System.out.println("id=" + personReg[0] + ", nombre =" + personReg[1] + ", apellido=" + personReg[2] + ", lenguaje=" + personReg[3]);
+        }
+
+
 
         System.out.println("================== consulta por campos personalizados lista =============");
 
