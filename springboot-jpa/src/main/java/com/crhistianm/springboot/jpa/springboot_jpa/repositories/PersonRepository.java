@@ -15,7 +15,8 @@ import com.crhistianm.springboot.jpa.springboot_jpa.entities.Person;
 public interface PersonRepository extends CrudRepository<Person, Long>{
 
 
-    @Query("select concat(p.name, ' ', p.lastname) from Person p")
+    //@Query("select concat(p.name, ' ', p.lastname) from Person p")
+    @Query("select p.name || ' ' || p.lastname from Person p")
     List<String> findAllFullNameConcat();
 
     @Query("select count(distinct(p.programmingLanguage)) from Person p")
