@@ -42,6 +42,10 @@ public class SpringbootJpaApplication implements CommandLineRunner{
 
     @Transactional(readOnly = true)
     public void personalizedQueriesConcatUpperAndLowerCase(){
+        System.out.println("============= consultas con nombres  y apellidos de personas============= ");
+        List<String> names = repository.findAllFullNameConcat();
+        names.forEach(System.out::println);
+
 
     }
 
