@@ -1,5 +1,6 @@
 package com.crhistianm.springboot.jpa.springboot_jpa;
 
+import java.awt.image.RescaleOp;
 import java.util.List;
 import java.util.Optional;
 import java.util.Scanner;
@@ -32,8 +33,20 @@ public class SpringbootJpaApplication implements CommandLineRunner{
         //update();
         //delete();
         //delete2();
-        personalizedQueries();
+        //personalizedQueries();
+        personalizedQueries2();
 
+    }
+
+    @Transactional(readOnly = true)
+    public void personalizedQueries2(){
+
+        System.out.println("============= consulta por objeto persona y lenguaje programacion ================");
+        List<Object[]> personsRegs = repository.findAllMixPerson();
+
+        personsRegs.forEach(reg ->{
+            System.out.println("programmingLanguage=" + reg[1] + ", person=" + reg[0]);
+        });
     }
 
     @Transactional(readOnly = true)
