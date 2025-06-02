@@ -36,12 +36,16 @@ public class SpringbootJpaApplication implements CommandLineRunner{
         //delete2();
         //personalizedQueries();
         //personalizedQueries2();
+        personalizedQueriesDistinct();
 
     }
 
 
     @Transactional(readOnly = true)
     public void personalizedQueriesDistinct(){
+        System.out.println("consultas con nombres de personas");
+        List<String> names = repository.findAllNames();
+        names.forEach(System.out::println);
 
     }
 
