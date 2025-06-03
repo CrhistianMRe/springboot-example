@@ -57,6 +57,16 @@ public class SpringbootJpaApplication implements CommandLineRunner{
         System.out.println(max);
 
 
+        System.out.println("============= consultas con el nombre y su largo ============= ");
+        List<Object[]> regs = repository.getPersonNameLength();
+
+        regs.forEach(reg -> {
+            String name = (String) reg[0];
+            Integer length = (Integer) reg[1];
+            System.out.println("name=" + name + ", length=" + length);
+
+        });
+
 
     }
 
