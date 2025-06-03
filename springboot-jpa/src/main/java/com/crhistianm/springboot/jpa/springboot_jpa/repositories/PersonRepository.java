@@ -14,7 +14,7 @@ import com.crhistianm.springboot.jpa.springboot_jpa.entities.Person;
  */
 public interface PersonRepository extends CrudRepository<Person, Long>{
 
-    List<Person> findByIdBetween(Long id1, Long id2);
+    List<Person> findByIdBetweenOrderByIdAsc(Long id1, Long id2);
 
     List<Person> findByNameBetween(String name1, String name2);
 
