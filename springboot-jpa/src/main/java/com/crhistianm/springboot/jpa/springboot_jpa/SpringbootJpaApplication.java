@@ -46,6 +46,9 @@ public class SpringbootJpaApplication implements CommandLineRunner{
     @Transactional(readOnly = true)
     public void queriesFunctionAggregation(){
 
+        System.out.println("============= consultas con el total de registros de la tabla persona ============= ");
+        Long count = repository.totalPerson();
+        
 
     }
 
