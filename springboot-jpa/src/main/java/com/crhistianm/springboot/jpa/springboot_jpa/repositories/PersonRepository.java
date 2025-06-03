@@ -14,7 +14,7 @@ import com.crhistianm.springboot.jpa.springboot_jpa.entities.Person;
  */
 public interface PersonRepository extends CrudRepository<Person, Long>{
 
-    List<Person> findAllByOrderByNameDesc();
+    List<Person> findAllByOrderByNameAscLastnameDesc();
 
     @Query("select p from Person p order by p.name, p.lastname desc")
     List<Person> getAllOrdered();
