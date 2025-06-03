@@ -17,6 +17,9 @@ public interface PersonRepository extends CrudRepository<Person, Long>{
     @Query("select count(p) from Person p")
     Long totalPerson();
 
+    @Query("select min(p.id) from Person p")
+    Long minId();
+
     List<Person> findAllByOrderByNameAscLastnameDesc();
 
     @Query("select p from Person p order by p.name, p.lastname desc")
