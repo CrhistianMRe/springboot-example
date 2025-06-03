@@ -50,6 +50,10 @@ public class SpringbootJpaApplication implements CommandLineRunner{
         Long count = repository.totalPerson();
         System.out.println("============= consultas con el valor minimo del id ============= ");
         Long min = repository.minId();
+        System.out.println("============= consultas con el valor maximo del id ============= ");
+        Long max = repository.maxId();
+        System.out.println(max);
+
 
 
     }
