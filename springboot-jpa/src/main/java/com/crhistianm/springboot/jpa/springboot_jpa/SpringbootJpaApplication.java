@@ -46,6 +46,11 @@ public class SpringbootJpaApplication implements CommandLineRunner{
     @Transactional(readOnly = true)
     public void queriesFunctionAggregation(){
 
+        System.out.println("============= consulta con el nombre mas corto============= ");
+        Integer minLengthName = repository.getMinLengthName();
+        System.out.println(minLengthName);
+
+
         System.out.println("============= consultas con el total de registros de la tabla persona ============= ");
         Long count = repository.totalPerson();
         System.out.println(count);
