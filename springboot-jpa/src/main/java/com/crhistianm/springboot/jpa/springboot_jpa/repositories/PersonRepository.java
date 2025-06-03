@@ -16,7 +16,7 @@ public interface PersonRepository extends CrudRepository<Person, Long>{
 
     List<Person> findByIdBetweenOrderByNameAsc(Long id1, Long id2);
 
-    List<Person> findByNameBetweenOrderByNameDescLastnameAsc(String name1, String name2);
+    List<Person> findByNameBetweenOrderByNameDescLastnameDesc(String name1, String name2);
 
 
 

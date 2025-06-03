@@ -51,7 +51,7 @@ public class SpringbootJpaApplication implements CommandLineRunner{
 
 
         System.out.println("============= consultas por nombres ============= ");
-        persons = repository.findByNameBetweenOrderByNameDescLastnameAsc("J", "Q");
+        persons = repository.findByNameBetweenOrderByNameDescLastnameDesc("J", "Q");
         persons.forEach(System.out::println);
 
         /*System.out.println("============= consultas por rangos ============= ");
