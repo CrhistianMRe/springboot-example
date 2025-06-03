@@ -50,6 +50,9 @@ public class SpringbootJpaApplication implements CommandLineRunner{
         Integer minLengthName = repository.getMinLengthName();
         System.out.println(minLengthName);
 
+        System.out.println("============= consulta con el nombre mas largo============= ");
+        Integer maxLengthName = repository.getMaxLengthName();
+        System.out.println(maxLengthName);
 
         System.out.println("============= consultas con el total de registros de la tabla persona ============= ");
         Long count = repository.totalPerson();
