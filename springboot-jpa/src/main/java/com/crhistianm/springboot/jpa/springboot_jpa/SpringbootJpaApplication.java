@@ -48,6 +48,7 @@ public class SpringbootJpaApplication implements CommandLineRunner{
 
         System.out.println("============= consultas con el total de registros de la tabla persona ============= ");
         Long count = repository.totalPerson();
+        System.out.println(count);
         System.out.println("============= consultas con el valor minimo del id ============= ");
         Long min = repository.minId();
         System.out.println(min);
