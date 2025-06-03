@@ -55,7 +55,7 @@ public class SpringbootJpaApplication implements CommandLineRunner{
         persons.forEach(System.out::println);
 
         System.out.println("============= obtener persona ============= ");
-        persons = repository.getAllPerson();
+        persons = repository.getAllOrdered();
         persons.forEach(System.out::println);
 
         /*System.out.println("============= consultas por rangos ============= ");
