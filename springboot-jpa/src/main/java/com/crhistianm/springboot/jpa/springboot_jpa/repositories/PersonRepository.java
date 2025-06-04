@@ -14,6 +14,9 @@ import com.crhistianm.springboot.jpa.springboot_jpa.entities.Person;
  */
 public interface PersonRepository extends CrudRepository<Person, Long>{
 
+    @Query("select min(p.id), max(p.id), sum(p.id), avg(length(p.name)), count(p.id) from Person p")
+    public Object getResumeAggregationFunction();
+
     @Query("select min(length(p.name)) from Person p")
     public Integer getMinLengthName();
 
