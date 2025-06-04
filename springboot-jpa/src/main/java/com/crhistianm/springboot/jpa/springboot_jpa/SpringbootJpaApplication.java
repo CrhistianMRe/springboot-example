@@ -76,6 +76,10 @@ public class SpringbootJpaApplication implements CommandLineRunner{
         });
 
 
+        System.out.println("============= consultas resumen de funciones de agregacion min, max, sum, avg, count ============= ");
+        Object[] resumeReg = (Object[]) repository.getResumeAggregationFunction();
+        System.out.println("min=" + resumeReg[0] + ", max=" + resumeReg[1] + ", sum=" + resumeReg[2] + ", avg=" + resumeReg[3] + ", count=" + resumeReg[4]);
+
     }
 
     @Transactional(readOnly = true)
