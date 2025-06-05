@@ -39,13 +39,20 @@ public class SpringbootJpaApplication implements CommandLineRunner{
         //personalizedQueriesDistinct();
         //personalizedQueriesConcatUpperAndLowerCase();
         //personalizedQueriesBetween();
-        queriesFunctionAggregation();
 
+        subQueries();
     }
 
     @Transactional(readOnly = true)
     public void subQueries(){
+        System.out.println("============= consulta con el nombre mas corto y su largo============= ");
+        List<Object[]> register = repository.getPersonNameLength();
+        register.forEach(reg -> {
+            String name = (String) reg[0];
+            Integer length = (Integer) reg[1];
+            System.out.println("name=" + name + ", length=" + length);
 
+        });
 
 
     }
