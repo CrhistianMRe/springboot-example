@@ -46,7 +46,7 @@ public class SpringbootJpaApplication implements CommandLineRunner{
     @Transactional(readOnly = true)
     public void subQueries(){
         System.out.println("============= consulta con el nombre mas corto y su largo============= ");
-        List<Object[]> register = repository.getPersonNameLength();
+        List<Object[]> register = repository.getShorterName();
         register.forEach(reg -> {
             String name = (String) reg[0];
             Integer length = (Integer) reg[1];
