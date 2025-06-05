@@ -45,6 +45,10 @@ public class SpringbootJpaApplication implements CommandLineRunner{
     
     @Transactional(readOnly = true)
     public void whereIn(){
+        System.out.println("============= consulta where in ============= ");
+        List<Person> persons = repository.getPersonsByIds();
+        persons.forEach(System.out::println);
+            
 
     }
 
