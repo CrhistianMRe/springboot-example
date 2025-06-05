@@ -1,6 +1,7 @@
 package com.crhistianm.springboot.jpa.springboot_jpa;
 
 import java.awt.image.RescaleOp;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import java.util.Scanner;
@@ -46,7 +47,7 @@ public class SpringbootJpaApplication implements CommandLineRunner{
     @Transactional(readOnly = true)
     public void whereIn(){
         System.out.println("============= consulta where in ============= ");
-        List<Person> persons = repository.getPersonsByIds();
+        List<Person> persons = repository.getPersonsByIds(Arrays.asList(1L,2L,5L,7L));
         persons.forEach(System.out::println);
             
 
