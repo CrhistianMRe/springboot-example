@@ -32,6 +32,8 @@ public class Person {
     @Column(name = "create_at")
     private LocalDateTime createAt;
 
+    @Column(name = "update_at")
+    private LocalDateTime updateAt;
 
     public Person (Long id, String name, String lastname, String programmingLanguage){
         this.id = id;
