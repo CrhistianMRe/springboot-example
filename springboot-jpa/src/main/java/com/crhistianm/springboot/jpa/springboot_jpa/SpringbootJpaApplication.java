@@ -54,6 +54,9 @@ public class SpringbootJpaApplication implements CommandLineRunner{
 
         });
 
+        System.out.println("============= consulta para obtener el ultimo registro de persona ============= ");
+        Optional<Person> optionalPerson = repository.getlastRegistration();
+        optionalPerson.ifPresent(System.out::println);
 
     }
 
