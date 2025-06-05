@@ -49,7 +49,7 @@ public class Person {
     }
 
     @PreUpdate
-    public void PreUpdate(){
+    public void preUpdate(){
         System.out.println("Evento del ciclo de vida del objeto entity pre-update");
         this.updateAt = LocalDateTime.now();
     }
