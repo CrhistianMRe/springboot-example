@@ -44,6 +44,13 @@ public class SpringbootJpaApplication implements CommandLineRunner{
     }
 
     @Transactional(readOnly = true)
+    public void subQueries(){
+
+
+
+    }
+
+    @Transactional(readOnly = true)
     public void queriesFunctionAggregation(){
 
         System.out.println("============= consulta con el nombre mas corto============= ");
