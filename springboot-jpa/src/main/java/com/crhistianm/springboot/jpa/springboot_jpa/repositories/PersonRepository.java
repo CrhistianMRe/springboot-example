@@ -14,7 +14,7 @@ import com.crhistianm.springboot.jpa.springboot_jpa.entities.Person;
  */
 public interface PersonRepository extends CrudRepository<Person, Long>{
 
-    @Query("select p from Person p where p.id in 1?")
+    @Query("select p from Person p where p.id in ?1")
     public List<Person> getPersonsByIds(List<Long> ids);
 
     @Query("select p.name, length(p.name) from Person p where length(p.name)=(select min(length(p.name)) from Person p)")
