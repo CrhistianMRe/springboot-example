@@ -1,5 +1,7 @@
 package com.crhistianm.springboot.jpa.springboot_jpa.entities;
 
+import java.time.LocalDateTime;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -26,6 +28,10 @@ public class Person {
 
     @Column(name = "programming_language")
     private String programmingLanguage;
+
+    @Column(name = "create_at")
+    private LocalDateTime createAt;
+
 
     public Person (Long id, String name, String lastname, String programmingLanguage){
         this.id = id;
