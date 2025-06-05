@@ -40,7 +40,12 @@ public class SpringbootJpaApplication implements CommandLineRunner{
         //personalizedQueriesConcatUpperAndLowerCase();
         //personalizedQueriesBetween();
 
-        subQueries();
+        whereIn();
+    }
+    
+    @Transactional(readOnly = true)
+    public void whereIn(){
+
     }
 
     @Transactional(readOnly = true)
