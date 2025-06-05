@@ -51,6 +51,7 @@ public class Person {
     @PreUpdate
     public void PreUpdate(){
         System.out.println("Evento del ciclo de vida del objeto entity pre-update");
+        this.createAt = LocalDateTime.now();
     }
 
     public Person(String name, String lastname){
