@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.PrePersist;
 import jakarta.persistence.Table;
 
 /**
@@ -31,6 +32,12 @@ public class Person {
         this.lastname = lastname;
         this.programmingLanguage = programmingLanguage;
     }
+
+    @PrePersist
+    public void prePersist(){
+        System.out.println("Evento del ciclo de ciclo de vida del entity pre persist");
+    }
+
 
     public Person(String name, String lastname){
         this.name = name;
