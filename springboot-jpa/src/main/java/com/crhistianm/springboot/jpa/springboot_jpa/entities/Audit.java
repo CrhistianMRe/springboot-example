@@ -15,6 +15,9 @@ public class Audit {
     @Column(name = "create_at")
     private LocalDateTime createAt;
 
+    @Column(name = "update_at")
+    private LocalDateTime updateAt;
+
     @PrePersist
     public void prePersist(){
         System.out.println("Evento del ciclo de ciclo de vida del entity pre persist");
