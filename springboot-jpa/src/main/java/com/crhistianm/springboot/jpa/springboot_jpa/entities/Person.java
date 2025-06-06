@@ -3,6 +3,7 @@ package com.crhistianm.springboot.jpa.springboot_jpa.entities;
 import java.time.LocalDateTime;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -28,6 +29,9 @@ public class Person {
 
     @Column(name = "programming_language")
     private String programmingLanguage;
+
+    @Embedded
+    private Audit audit;
 
     public Person (Long id, String name, String lastname, String programmingLanguage){
         this.id = id;
@@ -79,7 +83,7 @@ public class Person {
     @Override
     public String toString() {
         return "[id=" + id + ", name=" + name + ", lastname=" + lastname + ", programmingLanguage="
-                + programmingLanguage + "]";
+                + programmingLanguage +  ", createAt=" + audit.getCreateAt() + ", updated=" + audit.getUpdateAt() +  "]";
     }
 
 
