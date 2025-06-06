@@ -28,7 +28,7 @@ public class Person {
     private String programmingLanguage;
 
     @Embedded
-    private Audit audit;
+    private Audit audit = new Audit();
 
     public Person (Long id, String name, String lastname, String programmingLanguage){
         this.id = id;
