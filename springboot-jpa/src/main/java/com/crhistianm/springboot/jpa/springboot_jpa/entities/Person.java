@@ -40,11 +40,6 @@ public class Person {
         this.programmingLanguage = programmingLanguage;
     }
 
-    @PrePersist
-    public void prePersist(){
-        System.out.println("Evento del ciclo de ciclo de vida del entity pre persist");
-        this.createAt = LocalDateTime.now();
-    }
 
     @PreUpdate
     public void preUpdate(){
