@@ -76,14 +76,6 @@ public class Person {
         this.programmingLanguage = programmingLanguage;
     }
 
-    public LocalDateTime getUpdateAt() {
-        return updateAt;
-    }
-
-    public void setUpdateAt(LocalDateTime updateAt) {
-        this.updateAt = updateAt;
-    }
-
     @Override
     public String toString() {
         return "[id=" + id + ", name=" + name + ", lastname=" + lastname + ", programmingLanguage="
