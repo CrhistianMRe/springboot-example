@@ -102,6 +102,13 @@ public class Person {
         this.createAt = createAt;
     }
 
+    public LocalDateTime getUpdateAt() {
+        return updateAt;
+    }
+
+    public void setUpdateAt(LocalDateTime updateAt) {
+        this.updateAt = updateAt;
+    }
 
     @Override
     public String toString() {
