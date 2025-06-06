@@ -40,8 +40,8 @@ public class SpringbootJpaApplication implements CommandLineRunner{
         //personalizedQueriesDistinct();
         //personalizedQueriesConcatUpperAndLowerCase();
         //personalizedQueriesBetween();
-
-        whereIn();
+        //whereIn();
+        update();
     }
     
     @Transactional(readOnly = true)
