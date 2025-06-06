@@ -1,5 +1,8 @@
 package com.crhistianm.springboot.jpa.springboot_jpa.entities;
 
+import java.time.LocalDateTime;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 
 /**
@@ -7,6 +10,9 @@ import jakarta.persistence.Embeddable;
  */
 @Embeddable
 public class Audit {
+
+    @Column(name = "create_at")
+    private LocalDateTime createAt;
 
     
 }
