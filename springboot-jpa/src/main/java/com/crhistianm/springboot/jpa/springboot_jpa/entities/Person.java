@@ -36,13 +36,6 @@ public class Person {
         this.programmingLanguage = programmingLanguage;
     }
 
-
-    @PreUpdate
-    public void preUpdate(){
-        System.out.println("Evento del ciclo de vida del objeto entity pre-update");
-        this.updateAt = LocalDateTime.now();
-    }
-
     public Person(String name, String lastname){
         this.name = name;
         this.lastname= lastname;
