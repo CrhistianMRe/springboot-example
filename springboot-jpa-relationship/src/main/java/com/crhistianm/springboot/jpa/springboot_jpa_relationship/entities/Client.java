@@ -22,6 +22,9 @@ public class Client {
     private String name;
     private String lastname;
 
+    public Client() {
+
+    }
 
     public Long getId() {
         return id;
