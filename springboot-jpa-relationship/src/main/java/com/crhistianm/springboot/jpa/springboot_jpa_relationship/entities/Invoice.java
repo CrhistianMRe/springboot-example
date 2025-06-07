@@ -22,6 +22,10 @@ public class Invoice {
     private String description;
     private Long total;
 
+
+    public Invoice() {
+    }
+
     public Long getId() {
         return id;
     }
