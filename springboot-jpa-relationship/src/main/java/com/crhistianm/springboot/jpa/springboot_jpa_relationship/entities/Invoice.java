@@ -23,6 +23,13 @@ public class Invoice {
     private Long total;
 
 
+
+    public Invoice(Long id, String description, Long total) {
+        this.id = id;
+        this.description= description;
+        this.total= total;
+    }
+
     public Invoice() {
     }
 
