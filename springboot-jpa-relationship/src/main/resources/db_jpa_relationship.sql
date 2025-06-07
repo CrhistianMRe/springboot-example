@@ -29,5 +29,9 @@ ALTER TABLE invoices MODIFY invoice_id bigint NOT NULL AUTO_INCREMENT;
 ALTER TABLE invoices ADD CONSTRAINT FK_ClientInvoice
 FOREIGN KEY (client_id) REFERENCES clients(client_id)
 
+--INSERTS 
+
+INSERT INTO clients (name, lastname) VALUES ('Pepe', 'Doe');
+INSERT INTO clients (name, lastname) VALUES ('Maria', 'Roe');
 
 
