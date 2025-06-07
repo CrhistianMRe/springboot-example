@@ -20,6 +20,8 @@ public class Invoice {
 
     private String description;
 
+    private Long total;
+
     
 }
 
