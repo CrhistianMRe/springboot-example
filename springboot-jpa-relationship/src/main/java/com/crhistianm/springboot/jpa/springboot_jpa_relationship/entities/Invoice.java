@@ -6,6 +6,7 @@ import org.springframework.data.annotation.Id;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 /**
@@ -23,6 +24,8 @@ public class Invoice {
     private Long total;
 
 
+    @ManyToOne
+    private Client client;
 
     public Invoice(String description, Long total) {
         this.description= description;
