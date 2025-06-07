@@ -22,10 +22,14 @@ public class Client {
     private String name;
     private String lastname;
 
-    public Client() {
-
+    public Client(Long id, String name, String lastname) {
+        this.id = id;
+        this.name = name;
+        this.lastname = lastname;
     }
 
+    public Client() {
+    }
     public Long getId() {
         return id;
     }
