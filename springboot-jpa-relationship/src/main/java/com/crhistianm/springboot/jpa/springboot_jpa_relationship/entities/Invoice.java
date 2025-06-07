@@ -24,8 +24,7 @@ public class Invoice {
 
 
 
-    public Invoice(Long id, String description, Long total) {
-        this.id = id;
+    public Invoice(String description, Long total) {
         this.description= description;
         this.total= total;
     }
