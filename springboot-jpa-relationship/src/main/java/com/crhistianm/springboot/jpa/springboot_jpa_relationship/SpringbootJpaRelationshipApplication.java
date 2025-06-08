@@ -6,6 +6,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.crhistianm.springboot.jpa.springboot_jpa_relationship.repositories.ClientRepository;
+import com.crhistianm.springboot.jpa.springboot_jpa_relationship.repositories.InvoiceRepository;
 
 @SpringBootApplication
 public class SpringbootJpaRelationshipApplication implements CommandLineRunner{
@@ -13,6 +14,8 @@ public class SpringbootJpaRelationshipApplication implements CommandLineRunner{
 
     @Autowired
     private ClientRepository clientRepository;
+    @Autowired
+    private InvoiceRepository invoiceRepository;
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringbootJpaRelationshipApplication.class, args);
