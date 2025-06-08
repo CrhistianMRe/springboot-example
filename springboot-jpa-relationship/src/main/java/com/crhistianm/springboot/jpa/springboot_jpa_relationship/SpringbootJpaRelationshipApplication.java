@@ -49,8 +49,15 @@ public class SpringbootJpaRelationshipApplication implements CommandLineRunner{
     }
 
     public void manyToOneFindByIdClient(){
+        Optional<Client> optionalClient = clientRepository.findById(1L);
 
-
+        if (optionalClient.isPresent()) {
+            Client client = optionalClient.orElseThrow();
+            Invoice invoice = new Invoice("Compras de oficina", 2000L);
+            invoice.setClient(client);
+            Invoice invoiceDb = invoiceRepository.save(invoice);
+            System.out.println(invoiceDb);
+        }
     }
 
 }
