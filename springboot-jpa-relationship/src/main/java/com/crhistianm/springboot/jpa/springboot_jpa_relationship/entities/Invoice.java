@@ -35,6 +35,14 @@ public class Invoice {
     public Invoice() {
     }
 
+    public void setClient(Client client) {
+        this.client = client;
+    }
+
+    public Client getClient() {
+        return client;
+    }
+
     public Long getId() {
         return id;
     }
