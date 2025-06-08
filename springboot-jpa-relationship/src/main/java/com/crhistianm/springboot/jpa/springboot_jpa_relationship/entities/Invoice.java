@@ -1,6 +1,7 @@
 package com.crhistianm.springboot.jpa.springboot_jpa_relationship.entities;
 
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -17,6 +18,7 @@ public class Invoice {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "invoice_id")
     private Long id;
 
     private String description;
