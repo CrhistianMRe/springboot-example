@@ -5,6 +5,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import com.crhistianm.springboot.jpa.springboot_jpa_relationship.entities.Client;
+import com.crhistianm.springboot.jpa.springboot_jpa_relationship.entities.Invoice;
 import com.crhistianm.springboot.jpa.springboot_jpa_relationship.repositories.ClientRepository;
 import com.crhistianm.springboot.jpa.springboot_jpa_relationship.repositories.InvoiceRepository;
 
@@ -29,6 +31,11 @@ public class SpringbootJpaRelationshipApplication implements CommandLineRunner{
 
     
     public void manyToOne(){
+        Client client = new Client("Jhon", "Doe");
+        clientRepository.save(client);
+
+
+
 
     }
 
