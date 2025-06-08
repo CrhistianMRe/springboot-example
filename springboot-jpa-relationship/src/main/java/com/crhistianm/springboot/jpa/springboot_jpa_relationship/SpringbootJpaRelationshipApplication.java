@@ -1,5 +1,7 @@
 package com.crhistianm.springboot.jpa.springboot_jpa_relationship;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -25,8 +27,8 @@ public class SpringbootJpaRelationshipApplication implements CommandLineRunner{
 
     @Override
     public void run(String... args) throws Exception {
+        manyToOneFindByIdClient();
         
-        manyToOne();
     }
 
     
@@ -46,5 +48,9 @@ public class SpringbootJpaRelationshipApplication implements CommandLineRunner{
 
     }
 
+    public void manyToOneFindByIdClient(){
+
+
+    }
 
 }
