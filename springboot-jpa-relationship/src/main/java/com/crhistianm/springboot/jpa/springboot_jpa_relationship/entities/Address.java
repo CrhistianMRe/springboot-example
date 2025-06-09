@@ -50,4 +50,10 @@ public class Address {
         this.number = number;
     }
 
+    @Override
+    public String toString() {
+        return "{id=" + id + ", street=" + street + ", number=" + number+"}";
+    }
+
 }
+
