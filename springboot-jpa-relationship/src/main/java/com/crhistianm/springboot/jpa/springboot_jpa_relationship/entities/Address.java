@@ -21,10 +21,10 @@ public class Address {
 
     private Integer number;
 
-    Address (){
+    public Address (){
     }
 
-    Address(String street, Integer number){
+    public Address(String street, Integer number){
         this.street = street;
         this.number = number;
     }
