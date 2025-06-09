@@ -21,6 +21,10 @@ public class Address {
 
     private Integer number;
 
+    Address (){
+
+    }
+
     public Long getId() {
         return id;
     }
