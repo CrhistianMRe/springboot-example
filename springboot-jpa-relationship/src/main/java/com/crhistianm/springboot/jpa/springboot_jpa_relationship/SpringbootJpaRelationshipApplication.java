@@ -50,6 +50,7 @@ public class SpringbootJpaRelationshipApplication implements CommandLineRunner{
 
     }
 
+    @Transactional
     public void manyToOneFindByIdClient(){
         Optional<Client> optionalClient = clientRepository.findById(1L);
 
