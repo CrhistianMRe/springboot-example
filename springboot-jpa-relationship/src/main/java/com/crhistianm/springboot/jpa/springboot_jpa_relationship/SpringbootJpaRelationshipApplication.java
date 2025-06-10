@@ -32,6 +32,9 @@ public class SpringbootJpaRelationshipApplication implements CommandLineRunner{
         
     }
 
+    @Transactional
+    public void oneToMany(){
+    }
     
     @Transactional
     public void manyToOne(){
