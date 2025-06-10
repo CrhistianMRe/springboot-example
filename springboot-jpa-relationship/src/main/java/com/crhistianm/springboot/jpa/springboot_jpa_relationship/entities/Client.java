@@ -32,16 +32,16 @@ public class Client {
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Address> addresses;
 
+    public Client() {
+        addresses = new ArrayList<>();
+    }
 
     public Client(String name, String lastname) {
-        addresses = new ArrayList<>();
+        this();
         this.name = name;
         this.lastname = lastname;
     }
 
-    public Client() {
-        addresses = new ArrayList<>();
-    }
     public Long getId() {
         return id;
     }
