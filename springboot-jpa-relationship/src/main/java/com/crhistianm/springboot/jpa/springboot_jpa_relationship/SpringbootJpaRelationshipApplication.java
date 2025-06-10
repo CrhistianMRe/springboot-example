@@ -14,6 +14,8 @@ import com.crhistianm.springboot.jpa.springboot_jpa_relationship.entities.Invoic
 import com.crhistianm.springboot.jpa.springboot_jpa_relationship.repositories.ClientRepository;
 import com.crhistianm.springboot.jpa.springboot_jpa_relationship.repositories.InvoiceRepository;
 
+import sun.jvm.hotspot.ci.ciArrayKlass;
+
 @SpringBootApplication
 public class SpringbootJpaRelationshipApplication implements CommandLineRunner{
 
@@ -45,6 +47,7 @@ public class SpringbootJpaRelationshipApplication implements CommandLineRunner{
         client.getAddresses().add(address2);
 
 
+        clientRepository.save(client);
     }
     
     @Transactional
