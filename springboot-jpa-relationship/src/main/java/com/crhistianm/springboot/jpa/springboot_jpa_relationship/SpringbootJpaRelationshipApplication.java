@@ -47,6 +47,8 @@ public class SpringbootJpaRelationshipApplication implements CommandLineRunner{
 
 
         clientRepository.save(client);
+
+        System.out.println(client);
     }
     
     @Transactional
