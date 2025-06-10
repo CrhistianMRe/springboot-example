@@ -2,6 +2,7 @@ package com.crhistianm.springboot.jpa.springboot_jpa_relationship.entities;
 
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
@@ -33,11 +34,13 @@ public class Client {
 
 
     public Client(String name, String lastname) {
+        addresses = new ArrayList<>();
         this.name = name;
         this.lastname = lastname;
     }
 
     public Client() {
+        addresses = new ArrayList<>();
     }
     public Long getId() {
         return id;
