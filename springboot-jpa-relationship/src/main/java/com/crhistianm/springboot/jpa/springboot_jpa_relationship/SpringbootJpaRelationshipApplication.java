@@ -41,6 +41,8 @@ public class SpringbootJpaRelationshipApplication implements CommandLineRunner{
         Address address2 = new Address("Vasco de gama ", 9875);
 
 
+        client.getAddresses().add(address1);
+        client.getAddresses().add(address2);
 
 
     }
