@@ -30,7 +30,8 @@ public class SpringbootJpaRelationshipApplication implements CommandLineRunner{
 
     @Override
     public void run(String... args) throws Exception {
-       oneToMany(); 
+        oneToManyFindById();
+
     }
 
     @Transactional
@@ -50,6 +51,10 @@ public class SpringbootJpaRelationshipApplication implements CommandLineRunner{
         System.out.println(client);
     }
     
+    @Transactional
+    public void oneToManyFindById(){
+    }
+
     @Transactional
     public void manyToOne(){
         Client client = new Client("Jhon", "Doe");
