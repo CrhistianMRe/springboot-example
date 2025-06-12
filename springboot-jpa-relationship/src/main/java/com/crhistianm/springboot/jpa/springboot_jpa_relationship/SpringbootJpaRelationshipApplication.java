@@ -1,5 +1,6 @@
 package com.crhistianm.springboot.jpa.springboot_jpa_relationship;
 
+import java.util.Arrays;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,6 +54,19 @@ public class SpringbootJpaRelationshipApplication implements CommandLineRunner{
     
     @Transactional
     public void oneToManyFindById(){
+        Optional<Client> optionalClient = clientRepository.findById(2L);
+        optionalClient.ifPresent(client -> {
+
+            Address address1 = new Address("El verjel", 1234);
+            Address address2 = new Address("Vasco de gama ", 9875);
+
+            client.setAddresses(Arrays.asList(address1, address2));
+
+            clientRepository.save(client);
+
+            System.out.println(client);
+        });
+
     }
 
     @Transactional
