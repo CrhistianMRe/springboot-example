@@ -95,6 +95,12 @@ public class Client {
         this.invoices = invoices;
     }
 
+    public Client addInvoice(Invoice invoice){
+        invoices.add(invoice);
+        invoice.setClient(this);
+        return this;
+    }
+
     @Override
     public String toString() {
         return "{id=" + id + ", name=" + name + ", lastname=" + lastname +", invoices=" + invoices + ", addresses=" + addresses + "}";
