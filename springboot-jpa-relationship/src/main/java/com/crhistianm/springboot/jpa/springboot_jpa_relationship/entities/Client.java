@@ -3,6 +3,7 @@ package com.crhistianm.springboot.jpa.springboot_jpa_relationship.entities;
 
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -46,7 +47,7 @@ public class Client {
     private List<Invoice> invoices;
 
     public Client() {
-        addresses = new ArrayList<>();
+        addresses = new HashSet<>();
         invoices = new ArrayList<>();
     }
 
