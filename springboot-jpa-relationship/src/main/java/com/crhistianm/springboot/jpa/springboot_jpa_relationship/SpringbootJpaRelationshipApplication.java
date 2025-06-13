@@ -37,6 +37,26 @@ public class SpringbootJpaRelationshipApplication implements CommandLineRunner{
 
     @Transactional
     public void removeAddressFindById(){
+        Optional<Client> optionalClient = clientRepository.findById(2L);
+        optionalClient.ifPresent(client -> {
+            Address address1 = new Address("El verjel", 1234);
+            Address address2 = new Address("Vasco de gama ", 9875);
+
+            client.setAddresses(Arrays.asList(address1, address2));
+
+            clientRepository.save(client);
+
+            System.out.println(client);
+
+            Optional<Client> optionalClient2 = clientRepository.findById(2L);
+            optionalClient2.ifPresent(c -> {
+                c.getAddresses().remove(address1);
+                clientRepository.save(client);
+                System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++=");
+                System.out.println(c);
+            });
+
+        });
 
     }
 
