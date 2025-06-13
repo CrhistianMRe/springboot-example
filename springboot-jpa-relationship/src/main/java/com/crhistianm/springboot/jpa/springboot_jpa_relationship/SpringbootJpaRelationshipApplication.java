@@ -38,7 +38,7 @@ public class SpringbootJpaRelationshipApplication implements CommandLineRunner{
 
     @Transactional
     public void oneToManyBidireccionalFindById(){
-        Optional<Client> optionalClient = clientRepository.findOneWithInvoices(1L);
+        Optional<Client> optionalClient = clientRepository.findOne(1L);
         optionalClient.ifPresent(client -> {
 
             Invoice invoice1 = new Invoice("compras de la casa", 5000L);
