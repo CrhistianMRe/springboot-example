@@ -44,7 +44,7 @@ public class Client {
     private Set<Address> addresses;
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "client")
-    private List<Invoice> invoices;
+    private Set<Invoice> invoices;
 
     public Client() {
         addresses = new HashSet<>();
