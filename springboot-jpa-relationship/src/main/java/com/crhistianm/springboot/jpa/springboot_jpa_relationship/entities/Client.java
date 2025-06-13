@@ -41,7 +41,7 @@ public class Client {
     uniqueConstraints = @UniqueConstraint(columnNames = {"id_direccion"}))
     private List<Address> addresses;
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "client")
     private List<Invoice> invoices;
 
     public Client() {
