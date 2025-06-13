@@ -31,8 +31,15 @@ public class SpringbootJpaRelationshipApplication implements CommandLineRunner{
 
     @Override
     public void run(String... args) throws Exception {
-        removeAddress();
+        removeAddressFindById();
     }
+
+
+    @Transactional
+    public void removeAddressFindById(){
+
+    }
+
 
     @Transactional
     public void removeAddress(){
