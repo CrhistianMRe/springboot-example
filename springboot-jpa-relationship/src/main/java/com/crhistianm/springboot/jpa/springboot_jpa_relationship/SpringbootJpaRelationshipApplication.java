@@ -153,7 +153,11 @@ public class SpringbootJpaRelationshipApplication implements CommandLineRunner{
             Address address1 = new Address("El verjel", 1234);
             Address address2 = new Address("Vasco de gama ", 9875);
 
-            client.setAddresses(Arrays.asList(address1, address2));
+            Set<Address> addresses = new HashSet<>();
+            addresses.add(address1);
+            addresses.add(address2);
+
+            client.setAddresses(addresses);
 
             clientRepository.save(client);
 
