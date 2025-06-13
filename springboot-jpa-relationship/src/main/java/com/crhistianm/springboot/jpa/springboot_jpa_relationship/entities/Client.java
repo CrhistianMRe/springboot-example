@@ -104,7 +104,7 @@ public class Client {
     @Override
     public String toString() {
         return "{id=" + id + ", name=" + name + ", lastname=" + lastname +", invoices=" + invoices + 
-           // ", addresses=" + addresses +
+            ", addresses=" + addresses +
             "}";
     }
 
