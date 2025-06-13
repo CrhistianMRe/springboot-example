@@ -25,7 +25,7 @@ public class Invoice {
 
 
     @ManyToOne
-    //@JoinColumn(name = "id_cliente_temp")
+    @JoinColumn(name = "id_cliente_temp")
     private Client client;
 
     public Invoice(String description, Long total) {
