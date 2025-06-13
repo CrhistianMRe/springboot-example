@@ -4,6 +4,7 @@ package com.crhistianm.springboot.jpa.springboot_jpa_relationship.entities;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
@@ -39,7 +40,7 @@ public class Client {
     joinColumns = @JoinColumn(name = "id_cliente"),
     inverseJoinColumns = @JoinColumn(name = "id_direccion"),
     uniqueConstraints = @UniqueConstraint(columnNames = {"id_direccion"}))
-    private List<Address> addresses;
+    private Set<Address> addresses;
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "client")
     private List<Invoice> invoices;
