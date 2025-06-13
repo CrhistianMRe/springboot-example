@@ -48,7 +48,7 @@ public class Client {
 
     public Client() {
         addresses = new HashSet<>();
-        invoices = new ArrayList<>();
+        invoices = new HashSet<>();
     }
 
     public Client(String name, String lastname) {
