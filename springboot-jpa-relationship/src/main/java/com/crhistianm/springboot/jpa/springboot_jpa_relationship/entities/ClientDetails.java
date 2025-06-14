@@ -18,6 +18,14 @@ public class ClientDetails {
     private boolean premium;
     private Integer points;
 
+    public ClientDetails() {
+    }
+
+    public ClientDetails(boolean premium, Integer points) {
+        this.premium = premium;
+        this.points = points;
+    }
+
     public Long getId() {
         return id;
     }
