@@ -42,10 +42,7 @@ public class SpringbootJpaRelationshipApplication implements CommandLineRunner{
 
     @Transactional
     public void removeInvoiceBidireccionalFindById(){
-    }
 
-    @Transactional
-    public void oneToManyBidireccionalFindById(){
         Optional<Client> optionalClient = clientRepository.findOne(1L);
         optionalClient.ifPresent(client -> {
 
@@ -63,8 +60,26 @@ public class SpringbootJpaRelationshipApplication implements CommandLineRunner{
             Optional<Invoice> invoiceOptional = invoiceRepository.findById(2L);
             invoiceOptional.ifPresent(invoice ->{
                 client.getInvoices().remove(invoice);
+                invoice.setClient(null);
+                clientRepository.save(client);
+                System.out.println(client);
 
             });
+            });
+    }
+
+    @Transactional
+    public void oneToManyBidireccionalFindById(){
+        Optional<Client> optionalClient = clientRepository.findOne(1L);
+        optionalClient.ifPresent(client -> {
+
+            Invoice invoice1 = new Invoice("compras de la casa", 5000L);
+            Invoice invoice2 = new Invoice("compras de oficina", 8000L);
+
+            client.addInvoice(invoice1).addInvoice(invoice2);
+
+            clientRepository.save(client);
+            System.out.println(client);
         });
     }
 
