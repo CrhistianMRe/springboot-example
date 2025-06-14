@@ -14,6 +14,8 @@ public class ClientDetails {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private boolean premium;
+
 
 
     
