@@ -49,5 +49,13 @@ public class ClientDetails {
     public void setPoints(Integer points) {
         this.points = points;
     }
+
+    @Override
+    public String toString() {
+        return "ClientDetails [id=" + id + ", premium=" + premium + ", points=" + points + "]";
+    }
+
+    
+    
     
 }
