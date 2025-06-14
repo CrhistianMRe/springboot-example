@@ -41,6 +41,29 @@ public class SpringbootJpaRelationshipApplication implements CommandLineRunner{
 
     @Transactional
     public void removeInvoiceBidireccional(){
+
+        Optional<Client> optionalClient = Optional.of(new Client("Fran", "Moras"));
+        optionalClient.ifPresent(client -> {
+
+            Invoice invoice1 = new Invoice("compras de la casa", 5000L);
+            Invoice invoice2 = new Invoice("compras de oficina", 8000L);
+
+            client.addInvoice(invoice1).addInvoice(invoice2);
+
+            clientRepository.save(client);
+            System.out.println(client);
+        });
+
+        Optional<Client> optionalClientBd = clientRepository.findOne(1L);
+        optionalClientBd.ifPresent(client -> {
+            Optional<Invoice> invoiceOptional = invoiceRepository.findById(2L);
+            invoiceOptional.ifPresent(invoice ->{
+                client.removeInvoice(invoice);
+                clientRepository.save(client);
+                System.out.println(client);
+
+            });
+            });
     }
 
 
