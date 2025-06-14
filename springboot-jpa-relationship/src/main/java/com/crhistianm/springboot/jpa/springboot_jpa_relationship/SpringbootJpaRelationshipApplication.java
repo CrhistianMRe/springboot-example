@@ -57,6 +57,15 @@ public class SpringbootJpaRelationshipApplication implements CommandLineRunner{
             clientRepository.save(client);
             System.out.println(client);
         });
+
+        Optional<Client> optionalClientBd = clientRepository.findOne(1L);
+        optionalClientBd.ifPresent(client -> {
+            Optional<Invoice> invoiceOptional = invoiceRepository.findById(2L);
+            invoiceOptional.ifPresent(invoice ->{
+                client.getInvoices().remove(invoice);
+
+            });
+        });
     }
 
 
