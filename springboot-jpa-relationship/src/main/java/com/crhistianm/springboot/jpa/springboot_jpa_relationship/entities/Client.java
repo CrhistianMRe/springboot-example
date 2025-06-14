@@ -100,6 +100,12 @@ public class Client {
         return this;
     }
 
+    public Client removeInvoice(Invoice invoice){
+        this.getInvoices().remove(invoice);
+        invoice.setClient(null);
+        return this;
+    }
+
     @Override
     public String toString() {
         return "{id=" + id + ", name=" + name + ", lastname=" + lastname +", invoices=" + invoices + 
