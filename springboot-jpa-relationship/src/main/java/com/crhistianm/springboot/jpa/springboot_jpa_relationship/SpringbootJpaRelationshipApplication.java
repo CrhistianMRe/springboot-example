@@ -47,11 +47,12 @@ public class SpringbootJpaRelationshipApplication implements CommandLineRunner{
     @Transactional
     public void oneToOne(){
         Client client = new Client("Erba", "Pura");
+        ClientDetails clientDetails = new ClientDetails(true, 5000);
+        client.setClientDetails(clientDetails);
+
+        clientDetailsRepository.save(clientDetails);
         clientRepository.save(client);
 
-        ClientDetails clientDetails = new ClientDetails(true, 5000);
-        clientDetails.setClient(client);
-        clientDetailsRepository.save(clientDetails);
     }
 
 
