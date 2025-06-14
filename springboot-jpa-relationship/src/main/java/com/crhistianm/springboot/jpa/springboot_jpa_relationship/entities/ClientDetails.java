@@ -54,6 +54,14 @@ public class ClientDetails {
         this.points = points;
     }
 
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
+    }
+
     @Override
     public String toString() {
         return "ClientDetails [id=" + id + ", premium=" + premium + ", points=" + points + "]";
