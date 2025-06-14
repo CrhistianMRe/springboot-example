@@ -15,6 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.crhistianm.springboot.jpa.springboot_jpa_relationship.entities.Address;
 import com.crhistianm.springboot.jpa.springboot_jpa_relationship.entities.Client;
+import com.crhistianm.springboot.jpa.springboot_jpa_relationship.entities.ClientDetails;
 import com.crhistianm.springboot.jpa.springboot_jpa_relationship.entities.Invoice;
 import com.crhistianm.springboot.jpa.springboot_jpa_relationship.repositories.ClientDetailsRepository;
 import com.crhistianm.springboot.jpa.springboot_jpa_relationship.repositories.ClientRepository;
@@ -40,7 +41,17 @@ public class SpringbootJpaRelationshipApplication implements CommandLineRunner{
 
     @Override
     public void run(String... args) throws Exception {
-        removeInvoiceBidireccional();
+        oneToOne();
+    }
+
+    @Transactional
+    public void oneToOne(){
+        Client client = new Client("Erba", "Pura");
+        clientRepository.save(client);
+
+        ClientDetails clientDetails = new ClientDetails(true, 5000);
+        clientDetails.setClient(client);
+        clientDetailsRepository.save(clientDetails);
     }
 
 
