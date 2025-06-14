@@ -19,9 +19,6 @@ public class ClientDetails {
     private boolean premium;
     private Integer points;
 
-    @OneToOne
-    private Client client;
-
     public ClientDetails() {
     }
 
@@ -52,14 +49,6 @@ public class ClientDetails {
 
     public void setPoints(Integer points) {
         this.points = points;
-    }
-
-    public Client getClient() {
-        return client;
-    }
-
-    public void setClient(Client client) {
-        this.client = client;
     }
 
     @Override
