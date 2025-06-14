@@ -45,6 +45,7 @@ public class Client {
     private Set<Invoice> invoices;
 
     @OneToOne
+    @JoinColumn(name = "id_cliente_detalle")
     private ClientDetails clientDetails;
 
     public Client() {
