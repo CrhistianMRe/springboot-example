@@ -15,6 +15,7 @@ public class ClientDetails {
     private Long id;
 
     private boolean premium;
+    private Integer points;
 
 
 
