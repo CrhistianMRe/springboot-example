@@ -67,6 +67,35 @@ public class Invoice {
         return description;
     }
 
+
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Invoice other = (Invoice) obj;
+        if (id == null) {
+            if (other.id != null)
+                return false;
+        } else if (!id.equals(other.id))
+            return false;
+        if (description == null) {
+            if (other.description != null)
+                return false;
+        } else if (!description.equals(other.description))
+            return false;
+        if (total == null) {
+            if (other.total != null)
+                return false;
+        } else if (!total.equals(other.total))
+            return false;
+        return true;
+    }
+
     @Override
     public String toString() {
         return "{id=" + id + ", description=" + description + ", total=" + total + "}";
