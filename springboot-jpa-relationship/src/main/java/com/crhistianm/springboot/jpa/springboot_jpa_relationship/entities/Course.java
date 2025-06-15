@@ -19,6 +19,14 @@ public class Course {
     private String instructor;
 
 
+    public Course() {
+    }
+
+    public Course(String name, String instructor){
+        this.name = name;
+        this.instructor = instructor;
+    }
+
     public Long getId() {
         return id;
     }
