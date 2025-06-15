@@ -119,6 +119,11 @@ public class Client {
         this.clientDetails.setClient(this);
     }
 
+    public void removeClientDetails(ClientDetails clientDetails) {
+        this.clientDetails.setClient(null);
+        this.clientDetails = null;
+    }
+
     @Override
     public String toString() {
         return "{id=" + id + ", name=" + name + ", lastname=" + lastname +", invoices=" + invoices + 
