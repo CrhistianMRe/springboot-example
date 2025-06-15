@@ -23,6 +23,9 @@ public class Student {
 
     private String lastname;
 
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    private Set<Course> courses;
+
 
     public Long getId() {
         return id;
@@ -48,6 +51,12 @@ public class Student {
         return lastname;
     }
 
-   
+    public Set<Course> getCourses() {
+        return courses;
+    }
+
+    public void setCourses(Set<Course> courses) {
+        this.courses = courses;
+    }
 
 }
