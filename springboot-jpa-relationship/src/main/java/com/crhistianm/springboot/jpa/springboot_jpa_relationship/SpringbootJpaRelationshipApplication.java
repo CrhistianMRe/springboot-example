@@ -16,15 +16,20 @@ import org.springframework.transaction.annotation.Transactional;
 import com.crhistianm.springboot.jpa.springboot_jpa_relationship.entities.Address;
 import com.crhistianm.springboot.jpa.springboot_jpa_relationship.entities.Client;
 import com.crhistianm.springboot.jpa.springboot_jpa_relationship.entities.ClientDetails;
+import com.crhistianm.springboot.jpa.springboot_jpa_relationship.entities.Course;
 import com.crhistianm.springboot.jpa.springboot_jpa_relationship.entities.Invoice;
+import com.crhistianm.springboot.jpa.springboot_jpa_relationship.entities.Student;
 import com.crhistianm.springboot.jpa.springboot_jpa_relationship.repositories.ClientDetailsRepository;
 import com.crhistianm.springboot.jpa.springboot_jpa_relationship.repositories.ClientRepository;
 import com.crhistianm.springboot.jpa.springboot_jpa_relationship.repositories.InvoiceRepository;
+import com.crhistianm.springboot.jpa.springboot_jpa_relationship.repositories.StudentRepository;
 
 
 @SpringBootApplication
 public class SpringbootJpaRelationshipApplication implements CommandLineRunner{
 
+    @Autowired
+    private StudentRepository studentRepository;
 
     @Autowired
     private ClientRepository clientRepository;
