@@ -41,8 +41,24 @@ public class SpringbootJpaRelationshipApplication implements CommandLineRunner{
 
     @Override
     public void run(String... args) throws Exception {
-        oneToOneFindById();
+        oneToOneBidireccional();
     }
+
+    @Transactional
+    public void oneToOneBidireccional(){
+        Client client = new Client("Erba", "Pura");
+        ClientDetails clientDetails = new ClientDetails(true, 5000);
+
+        client.setClientDetails(clientDetails);
+        clientDetails.setClient(client);
+
+
+        clientRepository.save(client);
+
+        System.out.println(client);
+
+    }
+
 
 
     @Transactional
