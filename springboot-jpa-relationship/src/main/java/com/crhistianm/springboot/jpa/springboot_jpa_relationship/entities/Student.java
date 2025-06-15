@@ -1,6 +1,7 @@
 package com.crhistianm.springboot.jpa.springboot_jpa_relationship.entities;
 
 
+import java.util.HashSet;
 import java.util.Set;
 
 import jakarta.persistence.CascadeType;
@@ -26,6 +27,10 @@ public class Student {
     @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Set<Course> courses;
 
+
+    public Student(){
+        this.courses = new HashSet<>();
+    }
 
     public Long getId() {
         return id;
@@ -58,5 +63,8 @@ public class Student {
     public void setCourses(Set<Course> courses) {
         this.courses = courses;
     }
+
+
+    
 
 }
