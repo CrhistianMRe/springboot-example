@@ -32,6 +32,12 @@ public class Student {
         this.courses = new HashSet<>();
     }
 
+    public Student(String name, String lastname){
+        this();
+        this.name = name;
+        this.lastname = lastname;
+    }
+
     public Long getId() {
         return id;
     }
