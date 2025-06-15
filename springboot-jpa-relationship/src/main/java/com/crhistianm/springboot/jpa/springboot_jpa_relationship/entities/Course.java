@@ -51,6 +51,11 @@ public class Course {
         this.instructor = instructor;
     }
 
+    @Override
+    public String toString() {
+        return "{id=" + id + ", name=" + name + ", instructor=" + instructor + "}";
+    }
+
 
 
     
