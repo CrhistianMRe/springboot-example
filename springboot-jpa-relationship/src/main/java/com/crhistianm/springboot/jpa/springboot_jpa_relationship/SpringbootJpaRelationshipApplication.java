@@ -50,8 +50,6 @@ public class SpringbootJpaRelationshipApplication implements CommandLineRunner{
         ClientDetails clientDetails = new ClientDetails(true, 5000);
 
         client.setClientDetails(clientDetails);
-        clientDetails.setClient(client);
-
 
         clientRepository.save(client);
 

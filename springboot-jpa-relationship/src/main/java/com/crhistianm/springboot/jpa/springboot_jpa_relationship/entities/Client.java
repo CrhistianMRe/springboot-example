@@ -116,6 +116,7 @@ public class Client {
 
     public void setClientDetails(ClientDetails clientDetails) {
         this.clientDetails = clientDetails;
+        this.clientDetails.setClient(this);
     }
 
     @Override
