@@ -46,7 +46,23 @@ public class SpringbootJpaRelationshipApplication implements CommandLineRunner{
 
     @Override
     public void run(String... args) throws Exception {
-        oneToOneBidireccionalFindById();
+        manyToMany();
+    }
+
+    @Transactional
+    public void manyToMany(){
+        Student student1 = new Student("Jano", "Pura");
+        Student student2 = new Student("Erba", "Doe");
+
+        Course course1 = new Course("Curso de Java master", "Andres");
+        Course course2 = new Course("Curso de Spring Boot" , "Andres");
+
+
+        student1.setCourses(Set.of(course1,course2));
+        student2.setCourses(Set.of(course1));
+
+        studentRepository.saveAll(Set.of(student1,student2));
+
     }
 
 
