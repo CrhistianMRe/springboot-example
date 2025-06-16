@@ -26,9 +26,11 @@ public class Course {
     private Set<Student> students;
 
     public Course() {
+        this.students = new HashSet<>();
     }
 
     public Course(String name, String instructor){
+        this();
         this.name = name;
         this.instructor = instructor;
     }
