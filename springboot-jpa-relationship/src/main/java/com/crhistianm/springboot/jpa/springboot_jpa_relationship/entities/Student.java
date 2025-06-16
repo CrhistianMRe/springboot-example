@@ -75,6 +75,12 @@ public class Student {
     public void setCourses(Set<Course> courses) {
         this.courses = courses;
     }
+
+    public void addCourse(Course course){
+        this.courses.add(course);
+        course.getStudents().add(this);
+    }
+
     
     @Override
     public int hashCode() {
