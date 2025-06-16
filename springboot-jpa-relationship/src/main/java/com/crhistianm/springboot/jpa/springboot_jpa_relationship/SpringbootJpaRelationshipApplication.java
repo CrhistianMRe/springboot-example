@@ -21,12 +21,16 @@ import com.crhistianm.springboot.jpa.springboot_jpa_relationship.entities.Invoic
 import com.crhistianm.springboot.jpa.springboot_jpa_relationship.entities.Student;
 import com.crhistianm.springboot.jpa.springboot_jpa_relationship.repositories.ClientDetailsRepository;
 import com.crhistianm.springboot.jpa.springboot_jpa_relationship.repositories.ClientRepository;
+import com.crhistianm.springboot.jpa.springboot_jpa_relationship.repositories.CourseRepository;
 import com.crhistianm.springboot.jpa.springboot_jpa_relationship.repositories.InvoiceRepository;
 import com.crhistianm.springboot.jpa.springboot_jpa_relationship.repositories.StudentRepository;
 
 
 @SpringBootApplication
 public class SpringbootJpaRelationshipApplication implements CommandLineRunner{
+
+    @Autowired
+    private CourseRepository courseRepository;
 
     @Autowired
     private StudentRepository studentRepository;
