@@ -54,7 +54,7 @@ public class SpringbootJpaRelationshipApplication implements CommandLineRunner{
     }
 
     @Transactional
-    public void manyToOneFind(){
+    public void manyToManyFind(){
         Optional<Student> optionalStudent1 = studentRepository.findById(1L);
         Optional<Student> optionalStudent2 = studentRepository.findById(2L);
 
