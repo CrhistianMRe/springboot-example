@@ -38,6 +38,9 @@ public class ProductServiceImpl implements ProductService{
     @Transactional
     @Override
     public Optional<Product> delete(Product product) {
+        Optional<Product> productOptional = productRepository.findById(product.getId());
+        productOptional.ifPresent(p -> productRepository.delete(p));
+        return productOptional;
     }
 
 }
