@@ -37,7 +37,7 @@ public class ProductServiceImpl implements ProductService{
 
     @Transactional
     @Override
-    public void delete(Product product) {
+    public Optional<Product> delete(Product product) {
     }
 
 }
