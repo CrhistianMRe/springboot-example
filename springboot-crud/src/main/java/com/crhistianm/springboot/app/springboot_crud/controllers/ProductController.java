@@ -8,6 +8,8 @@ import com.crhistianm.springboot.app.springboot_crud.services.ProductService;
 @RestController
 public class ProductController {
 
+    @Autowired
+    private ProductService productService;
 
 
     
