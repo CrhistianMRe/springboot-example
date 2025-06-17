@@ -32,7 +32,7 @@ public class ProductServiceImpl implements ProductService{
     @Transactional
     @Override
     public Product save(Product product) {
-        return null;
+        return productRepository.save(product);
     } 
 
     @Transactional
