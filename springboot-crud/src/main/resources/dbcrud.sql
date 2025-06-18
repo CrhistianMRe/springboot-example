@@ -6,7 +6,8 @@ CREATE TABLE IF NOT EXISTS products(
     product_id bigint NOT NULL,
     name varchar(45) DEFAULT NULL,
     price int DEFAULT NULL,
-    description TEXT DEFAULT NULL
+    description TEXT DEFAULT NULL,
+    sku varchar(45) DEFAULT NULL
 );
 
 ALTER TABLE products ADD PRIMARY KEY (product_id);
