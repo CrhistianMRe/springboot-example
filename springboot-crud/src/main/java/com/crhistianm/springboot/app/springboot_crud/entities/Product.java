@@ -1,5 +1,6 @@
 package com.crhistianm.springboot.app.springboot_crud.entities;
 
+import com.crhistianm.springboot.app.springboot_crud.validations.IsInDatabase;
 import com.crhistianm.springboot.app.springboot_crud.validations.IsRequired;
 
 import jakarta.persistence.Column;
@@ -34,6 +35,8 @@ public class Product {
     @IsRequired
     private String description;
 
+    @IsRequired
+    @IsInDatabase
     private String sku;
 
     public Long getId() {
