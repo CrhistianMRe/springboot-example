@@ -13,6 +13,6 @@ public interface ProductService {
 
     Product save(Product product);
 
-    Optional<Product> delete(Product product);
+    Optional<Product> delete(Long id);
     
 }
