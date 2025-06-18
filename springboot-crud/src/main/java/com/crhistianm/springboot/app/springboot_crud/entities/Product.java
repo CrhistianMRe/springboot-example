@@ -1,5 +1,7 @@
 package com.crhistianm.springboot.app.springboot_crud.entities;
 
+import com.crhistianm.springboot.app.springboot_crud.validations.IsRequired;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -21,7 +23,7 @@ public class Product {
     @Column(name = "product_id")
     private Long id;
 
-    @NotEmpty(message ="{NotEmpty.product.name}" )
+    @IsRequired(message ="{IsRequired.product.name}" )
     @Size(min = 3, max = 20)
     private String name;
 
@@ -29,7 +31,7 @@ public class Product {
     @NotNull(message = "{NotNull.product.price}")
     private Integer price;
 
-    @NotBlank(message = "{NotBlank.product.description}")
+    @IsRequired
     private String description;
 
     public Long getId() {
