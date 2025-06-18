@@ -34,6 +34,8 @@ public class Product {
     @IsRequired
     private String description;
 
+    private String sku;
+
     public Long getId() {
         return id;
     }
@@ -64,6 +66,14 @@ public class Product {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public void setSku(String sku) {
+        this.sku = sku;
+    }
+
+    public String getSku() {
+        return sku;
     }
 
 

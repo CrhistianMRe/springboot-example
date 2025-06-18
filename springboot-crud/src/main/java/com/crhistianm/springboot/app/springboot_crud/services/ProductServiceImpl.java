@@ -42,6 +42,7 @@ public class ProductServiceImpl implements ProductService{
         if(productOptional.isPresent()){
             Product p = productOptional.orElseThrow();
 
+            p.setSku(product.getSku());
             p.setName(product.getName());
             p.setDescription(product.getDescription());
             p.setPrice(product.getPrice());
