@@ -16,5 +16,7 @@ public interface ProductService {
     Optional<Product> update(Long id, Product product);
 
     Optional<Product> delete(Long id);
+
+    public boolean existsBySky(String sku);
     
 }
