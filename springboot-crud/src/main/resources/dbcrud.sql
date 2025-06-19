@@ -43,6 +43,13 @@ ALTER TABLE users_roles ADD CONSTRAINT FK_users FOREIGN KEY (user_id) REFERENCES
 ALTER TABLE users_roles ADD CONSTRAINT FK_roles FOREIGN KEY (role_id) REFERENCES roles(role_id);
 
 
+INSERT INTO roles(name) VALUES('ROLE_ADMIN');
+INSERT INTO roles(name) VALUES('ROLE_USER');
+
+
+    
+
+
 
 
 
