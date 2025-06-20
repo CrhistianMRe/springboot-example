@@ -49,7 +49,7 @@ public class User {
     )
     private List<Role> roles;
 
-    private boolean enabled;
+    private Boolean enabled;
 
     @Transient
     private boolean admin;
