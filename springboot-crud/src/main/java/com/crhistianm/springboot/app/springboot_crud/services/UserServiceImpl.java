@@ -27,9 +27,9 @@ public class UserServiceImpl implements UserService {
     private PasswordEncoder passwordEncoder;
 
     @Override
+    @Transactional(readOnly = true)
     public List<User> findAll() {
-        // TODO Auto-generated method stub
-        return null;
+        return (List<User>) userRepository.findAll();
     }
 
     @Override
