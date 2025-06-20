@@ -3,6 +3,8 @@ package com.crhistianm.springboot.app.springboot_crud.entities;
 
 import java.util.List;
 
+import org.springframework.data.annotation.Transient;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -38,6 +40,8 @@ public class User {
     )
     private List<Role> roles;
 
+    @Transient
+    private boolean admin;
 
     public Long getId() {
         return id;
@@ -69,6 +73,14 @@ public class User {
 
     public void setRoles(List<Role> roles) {
         this.roles = roles;
+    }
+
+    public void setAdmin(boolean admin) {
+        this.admin = admin;
+    }
+
+    public boolean isAdmin() {
+        return admin;
     }
 
 }
