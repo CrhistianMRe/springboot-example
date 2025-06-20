@@ -16,6 +16,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinColumns;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.PrePersist;
 import jakarta.persistence.Table;
 import jakarta.persistence.Transient;
 import jakarta.persistence.UniqueConstraint;
@@ -50,6 +51,11 @@ public class User {
     private List<Role> roles;
 
     private Boolean enabled;
+
+    @PrePersist
+    public void prePersist(){
+        enabled = true;
+    }
 
     @Transient
     private boolean admin;
