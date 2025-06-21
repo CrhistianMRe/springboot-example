@@ -1,6 +1,7 @@
 package com.crhistianm.springboot.app.springboot_crud.entities;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -51,6 +52,10 @@ public class User {
     private List<Role> roles;
 
     private Boolean enabled;
+    
+    public User() {
+        this.roles = new ArrayList<>();
+    }
 
     @PrePersist
     public void prePersist(){
