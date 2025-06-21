@@ -1,0 +1,1 @@
+This last class JpaUserDetailsService uses UserDetailsService interface. It does a query and gets the username from it for creating an GrantedAuthority List which will be all roles from the db; After that it creates a Spring Framework Security User with the required attributes and authorities or roles
