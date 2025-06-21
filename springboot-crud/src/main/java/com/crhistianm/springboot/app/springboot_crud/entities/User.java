@@ -4,6 +4,7 @@ package com.crhistianm.springboot.app.springboot_crud.entities;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.crhistianm.springboot.app.springboot_crud.validations.ExistsByUsername;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -34,6 +35,7 @@ public class User {
     @Column(name = "user_id")
     private Long id;
 
+    @ExistsByUsername
     @Column(unique = true)
     @NotBlank
     @Size(min = 4, max = 12)

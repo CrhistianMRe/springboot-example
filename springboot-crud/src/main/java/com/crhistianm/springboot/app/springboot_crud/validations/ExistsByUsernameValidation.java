@@ -1,0 +1,22 @@
+package com.crhistianm.springboot.app.springboot_crud.validations;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import com.crhistianm.springboot.app.springboot_crud.services.UserService;
+
+import jakarta.validation.ConstraintValidator;
+import jakarta.validation.ConstraintValidatorContext;
+
+@Component
+public class ExistsByUsernameValidation implements ConstraintValidator<ExistsByUsername, String>{
+
+    @Autowired
+    private UserService userService;
+
+    @Override
+    public boolean isValid(String username, ConstraintValidatorContext context) {
+            return !userService.existsByUsername(username);
+    }
+
+}
