@@ -4,6 +4,8 @@ package com.crhistianm.springboot.app.springboot_crud.entities;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -24,6 +26,8 @@ public class Role {
     @Column(unique = true)
     private String name;
 
+    //Ignore roles(the main one) on inverse relationship to not generate a infinite loop. Also Ignore some proxy attributes generated when getting JSON
+    @JsonIgnoreProperties({"roles", "handler", "hibernateLazyInitializer"})
     @ManyToMany(mappedBy = "roles")
     private List<User> users;
 
