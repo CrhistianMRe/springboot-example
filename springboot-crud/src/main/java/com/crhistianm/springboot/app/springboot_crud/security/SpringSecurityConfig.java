@@ -13,6 +13,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
 import com.crhistianm.springboot.app.springboot_crud.security.filter.JwtAuthenticationFilter;
+import com.crhistianm.springboot.app.springboot_crud.security.filter.JwtValidationFilter;
 
 @Configuration
 public class SpringSecurityConfig {
@@ -40,6 +41,7 @@ public class SpringSecurityConfig {
                 //Any other endpoint request requires auth
                 .anyRequest().authenticated())
                 .addFilter(new JwtAuthenticationFilter(authenticationManager()))
+                .addFilter(new JwtValidationFilter(authenticationManager()))
                 //Disable token csrf which provides security
                 .csrf(config -> config.disable())
                 //Set session stateless to manage all auth stuff on token
