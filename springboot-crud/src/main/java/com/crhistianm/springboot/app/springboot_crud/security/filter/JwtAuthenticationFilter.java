@@ -79,8 +79,10 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 
 
          //Claims is a type interface who extends from Map
-         Claims claims = Jwts.claims().build();
-         claims.put("authorities", roles);
+         Claims claims = Jwts.claims()
+             .add("authorities", roles)
+             .add("username", username)
+             .build();
 
          //Generate token
          String token = Jwts.builder()
