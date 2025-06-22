@@ -71,7 +71,7 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 
          //Auth result i think is the attemptAuthentication method 
          //Get username from authentication result
-         User user = (User) authResult.getPrincipal();
+         org.springframework.security.core.userdetails.User user = (org.springframework.security.core.userdetails.User) authResult.getPrincipal();
          String username = user.getUsername();
 
          //Retrieve roles from authResult
