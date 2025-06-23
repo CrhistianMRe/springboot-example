@@ -38,6 +38,11 @@ public class SpringSecurityConfig {
                 //set endpoint public to all GET,POST,PUT,DELETE, etc.. 
                 .requestMatchers(HttpMethod.GET, "/users").permitAll()
                 .requestMatchers(HttpMethod.POST, "/users/register").permitAll()
+                .requestMatchers(HttpMethod.POST, "/users").hasRole("ADMIN")
+                .requestMatchers(HttpMethod.POST, "/api/products").hasRole("ADMIN")
+                .requestMatchers(HttpMethod.GET, "/api/products", "/api/pruducts/{id}").hasAnyRole("ADMIN", "USER")
+                .requestMatchers(HttpMethod.PUT, "/api/products/{id}").hasRole("ADMIN")
+                .requestMatchers(HttpMethod.DELETE, "/api/products/{id}").hasRole("ADMIN")
                 //Any other endpoint request requires auth
                 .anyRequest().authenticated())
                 .addFilter(new JwtAuthenticationFilter(authenticationManager()))
