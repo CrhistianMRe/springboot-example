@@ -1,8 +1,12 @@
 package com.crhistianm.springboot.app.springboot_crud.security;
 
+import java.util.Arrays;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.Ordered;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
@@ -12,9 +16,14 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+import org.springframework.web.filter.CorsFilter;
 
 import com.crhistianm.springboot.app.springboot_crud.security.filter.JwtAuthenticationFilter;
 import com.crhistianm.springboot.app.springboot_crud.security.filter.JwtValidationFilter;
+
 
 @Configuration
 @EnableMethodSecurity(prePostEnabled = true)
@@ -51,10 +60,41 @@ public class SpringSecurityConfig {
                 .addFilter(new JwtValidationFilter(authenticationManager()))
                 //Disable token csrf which provides security
                 .csrf(config -> config.disable())
+                .cors(cors -> cors.configurationSource(configurationSource()))
                 //Set session stateless to manage all auth stuff on token
                 .sessionManagement(management -> management.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .build();
        
     }
+
+    @Bean
+    CorsConfigurationSource configurationSource(){
+
+        CorsConfiguration corsConfiguration = new CorsConfiguration();
+        corsConfiguration.setAllowedOriginPatterns(Arrays.asList("*"));
+
+        corsConfiguration.setAllowedMethods(Arrays.asList("GET", "POST", "DELETE", "PUT"));
+
+        corsConfiguration.setAllowedHeaders(Arrays.asList("Authorization", "Content-Type"));
+
+        corsConfiguration.setAllowCredentials(true);
+
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+
+        source.registerCorsConfiguration("/**", corsConfiguration);
+
+        return source;
+    }
+
+    @Bean
+    FilterRegistrationBean<CorsFilter> corsFilter(){
+        FilterRegistrationBean<CorsFilter> corsBean = new FilterRegistrationBean<>(new CorsFilter(configurationSource()));
+
+        corsBean.setOrder(Ordered.HIGHEST_PRECEDENCE);
+
+        return corsBean;
+
+    }
+
 
 }
